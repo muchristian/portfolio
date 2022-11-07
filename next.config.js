@@ -7,6 +7,7 @@ const nextConfig = {
       "cdn.dribbble.com",
       "images.unsplash.com",
       "cdn.dribbblNamee.com",
+      "media-exp1.licdn.com",
     ],
   },
 };

@@ -100,13 +100,16 @@ const Home: NextPage = () => {
 
         {/* <div className=" flex items-center "> */}
         <div className="py-16 px-32 flex flex-col gap-6 z-10 items-center justify-center">
-          <div className="rounded-full flex items-center justify-center p-4 bg-secondary-7">
+          <div
+            className="relative rounded-full flex items-center justify-center bg-secondary-7"
+            style={{ height: "200px", width: "200px" }}
+          >
             <Image
               className="rounded-full"
-              src="/a55cf1573263671.61745de38a63ed.png"
+              src="/IMG-20200111-WA0006~2.jpg"
               alt="chris avatar"
-              width={125}
-              height={125}
+              width={"160px"}
+              height={"160px"}
             />
           </div>
           <h6 className="greeting text-secondary-3 text-sm font-medium">
@@ -132,9 +135,9 @@ const Home: NextPage = () => {
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   className="feather feather-send"
                 >
                   <line x1="22" y1="2" x2="11" y2="13"></line>
@@ -150,7 +153,7 @@ const Home: NextPage = () => {
             </Button>
           </div>
         </div>
-        <div className="skills px-64 flex-col py-16 bg-secondary-7">
+        <div className="skills px-32 flex-col py-16 bg-secondary-7">
           <div className="skills-header flex flex-col gap-2 items-center">
             <div className="flex gap-2 items-center">
               <svg
@@ -417,12 +420,13 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
-        <div className="portfolio min-h-screen px-64 flex-col items-center py-16">
+        <div className="portfolio min-h-screen px-32 flex-col items-center py-16">
           <div className="portfolio-header flex flex-col gap-2">
             <div className="flex gap-2 items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 height="32"
+                flex-1
                 width="32"
                 className="ionicon"
                 viewBox="0 0 512 512"
@@ -453,17 +457,17 @@ const Home: NextPage = () => {
               My Recent Projects
             </h3>
           </div>
-          <div className="portfolio-items flex flex-wrap gap-8 pt-20">
-            <div className="basis-1/5 flex-1 transition duration-300 group transform hover:-translate-y-2 hover:shadow-2xl cursor-pointer">
+          <div className="portfolio-items w-full pt-20">
+            <div className="relative transition duration-300 group transform hover:-translate-y-2 hover:shadow-2xl cursor-pointer">
               <div className="px-6 py-6 flex flex-col bg-primary-4 bg-opacity-90 z-10 absolute w-full h-full text-white rounded-2xl opacity-0 transition-all duration-300 transform group-hover:scale-105 text-xl group-hover:opacity-100">
-                <h2 className="text-primary-2 text-md font-semibold">
-                  Applix website
+                <h2 className="text-secondary-1 text-lg font-medium">
+                  Applix websites
                 </h2>
-                <p className="mt-2 text-secondary-5 text-sm">
+                <p className="mt-2 text-secondary-5 text-sm overflow-y-auto">
                   A software company's website, I built it with phtml, and php
                   composer using bootstrap framework
                 </p>
-                <div className="flex items-center justify-center gap-8 mt-auto">
+                <div className="flex items-center gap-6 mt-auto">
                   <Link type="button" href={"https://applix.africa/"}>
                     <a className="transition font-semibold rounded-md text-sm justify-center inline-flex items-center hover:duration-150 px-4 py-2.5 border border-secondary-1 bg-secondary-1">
                       Demo
@@ -478,23 +482,22 @@ const Home: NextPage = () => {
               </div>
               <Image
                 src={"/projects/applix.png"}
-                className="rounded-md object-cover"
-                width={"100%"}
-                height={"80%"}
-                layout="responsive"
+                className="rounded-md"
+                layout="fill"
+                objectFit="cover"
               />
             </div>
-            <div className="basis-1/5 flex-1 transition duration-300 group transform hover:-translate-y-2 hover:shadow-2xl cursor-pointer">
+            <div className="transition duration-300 group transform hover:-translate-y-2 hover:shadow-2xl cursor-pointer">
               <div className="px-6 py-6 flex flex-col bg-primary-4 bg-opacity-90 z-10 absolute w-full h-full text-white rounded-2xl opacity-0 transition-all duration-300 transform group-hover:scale-105 text-xl group-hover:opacity-100">
-                <h2 className="text-primary-2 text-md font-semibold">
+                <h2 className="text-secondary-1 text-lg font-medium">
                   Expense Tracker
                 </h2>
-                <p className="mt-2 text-secondary-5 text-sm">
+                <p className="mt-2 text-secondary-5 text-sm overflow-y-auto">
                   An expense tracker app, built with Nextjs, Tailwindcss,
                   Nodejs, koaJs, Strapi cms and postgres, It also Redux toolkit
                   for state management
                 </p>
-                <div className="flex items-center justify-center gap-8 mt-auto">
+                <div className="flex items-center gap-6 mt-auto">
                   <Link type="button" href={"/"}>
                     <a className="transition font-semibold rounded-md text-sm justify-center inline-flex items-center hover:duration-150 px-4 py-2.5 border border-secondary-1 bg-secondary-1">
                       Demo
@@ -512,14 +515,13 @@ const Home: NextPage = () => {
               </div>
               <Image
                 src={"/projects/expense_tracker.png"}
-                className="rounded-md object-cover"
-                width={"100%"}
-                height={"80%"}
-                layout="responsive"
+                className="rounded-md"
+                layout="fill"
+                objectFit="cover"
               />
             </div>
-            <div className="basis-1/5 flex-1 transition duration-300 group transform hover:-translate-y-2 hover:shadow-2xl cursor-pointer  border border-secondary-5 rounded-md border-opacity-20">
-              <div className="relative px-6 py-6 flex flex-col bg-primary-4 bg-opacity-80 w-full h-full text-white rounded-2xl transition-all duration-300 transform group-hover:scale-105 text-xl">
+            <div className="transition duration-300 group transform hover:-translate-y-2 hover:shadow-2xl cursor-pointer">
+              <div className="px-6 py-6 flex flex-col bg-primary-4 bg-opacity-90 z-10 absolute w-full h-full text-white rounded-2xl opacity-0 transition-all duration-300 transform group-hover:scale-105 text-xl group-hover:opacity-100">
                 <div className="flex items-center gap-4">
                   <svg
                     width="24px"
@@ -533,22 +535,24 @@ const Home: NextPage = () => {
                       <path d="M47.755 181.634c-.28.633-1.278.823-2.185.389-.925-.416-1.445-1.28-1.145-1.916.275-.652 1.273-.834 2.196-.396.927.415 1.455 1.287 1.134 1.923M54.027 187.23c-.608.564-1.797.302-2.604-.589-.834-.889-.99-2.077-.373-2.65.627-.563 1.78-.3 2.616.59.834.899.996 2.08.36 2.65M58.33 194.39c-.782.543-2.06.034-2.849-1.1-.781-1.133-.781-2.493.017-3.038.792-.545 2.05-.055 2.85 1.07.78 1.153.78 2.513-.019 3.069M65.606 202.683c-.699.77-2.187.564-3.277-.488-1.114-1.028-1.425-2.487-.724-3.258.707-.772 2.204-.555 3.302.488 1.107 1.026 1.445 2.496.7 3.258M75.01 205.483c-.307.998-1.741 1.452-3.185 1.028-1.442-.437-2.386-1.607-2.095-2.616.3-1.005 1.74-1.478 3.195-1.024 1.44.435 2.386 1.596 2.086 2.612M85.714 206.67c.036 1.052-1.189 1.924-2.705 1.943-1.525.033-2.758-.818-2.774-1.852 0-1.062 1.197-1.926 2.721-1.951 1.516-.03 2.758.815 2.758 1.86M96.228 206.267c.182 1.026-.872 2.08-2.377 2.36-1.48.27-2.85-.363-3.039-1.38-.184-1.052.89-2.105 2.367-2.378 1.508-.262 2.857.355 3.049 1.398" />
                     </g>
                   </svg>
-                  <h2 className="text-primary-2 text-md font-semibold">
+                  <h2 className="text-secondary-1 text-lg font-medium">
                     Course progress tracker
                   </h2>
                 </div>
-
-                <p className="mt-4 text-secondary-5 text-sm mb-4">
+                <p className="mt-2 text-secondary-5 text-sm overflow-y-auto">
                   A course progress tracker, for staying updated of how far is
                   the on going course. It is built with Reactjs, Bootstrap 4,
                   Sass, Python Django and mysql
                 </p>
-                <div className="flex items-center justify-center gap-8 mt-auto">
+                <div className="flex items-center gap-6 mt-auto">
+                  <Link type="button" href={"/"}>
+                    <a className="transition font-semibold rounded-md text-sm justify-center inline-flex items-center hover:duration-150 px-4 py-2.5 border border-secondary-1 bg-secondary-1">
+                      Demo
+                    </a>
+                  </Link>
                   <Link
                     type="button"
-                    href={
-                      "https://github.com/muchristian/Course-Progress-Tracker-frontend"
-                    }
+                    href={"https://github.com/muchristian/expense-app-tracker"}
                   >
                     <a className="transition font-semibold rounded-md text-sm justify-center inline-flex items-center hover:duration-150 px-4 py-2.5 border border-secondary-1 text-secondary-1">
                       View Code
@@ -556,9 +560,15 @@ const Home: NextPage = () => {
                   </Link>
                 </div>
               </div>
+              <Image
+                src={"/projects/expense_tracker.png"}
+                className="rounded-md"
+                layout="fill"
+                objectFit="cover"
+              />
             </div>
-            <div className="basis-1/5 flex-1 transition duration-300 group transform hover:-translate-y-2 hover:shadow-2xl cursor-pointer  border border-secondary-5 rounded-md border-opacity-20">
-              <div className="relative px-6 py-6 flex flex-col bg-primary-4 bg-opacity-80 w-full h-full text-white rounded-2xl transition-all duration-300 transform group-hover:scale-105 text-xl">
+            <div className="transition duration-300 group transform hover:-translate-y-2 hover:shadow-2xl cursor-pointer">
+              <div className="px-6 py-6 flex flex-col bg-primary-4 bg-opacity-90 z-10 absolute w-full h-full text-white rounded-2xl opacity-0 transition-all duration-300 transform group-hover:scale-105 text-xl group-hover:opacity-100">
                 <div className="flex items-center gap-4">
                   <svg
                     width="24px"
@@ -572,18 +582,22 @@ const Home: NextPage = () => {
                       <path d="M47.755 181.634c-.28.633-1.278.823-2.185.389-.925-.416-1.445-1.28-1.145-1.916.275-.652 1.273-.834 2.196-.396.927.415 1.455 1.287 1.134 1.923M54.027 187.23c-.608.564-1.797.302-2.604-.589-.834-.889-.99-2.077-.373-2.65.627-.563 1.78-.3 2.616.59.834.899.996 2.08.36 2.65M58.33 194.39c-.782.543-2.06.034-2.849-1.1-.781-1.133-.781-2.493.017-3.038.792-.545 2.05-.055 2.85 1.07.78 1.153.78 2.513-.019 3.069M65.606 202.683c-.699.77-2.187.564-3.277-.488-1.114-1.028-1.425-2.487-.724-3.258.707-.772 2.204-.555 3.302.488 1.107 1.026 1.445 2.496.7 3.258M75.01 205.483c-.307.998-1.741 1.452-3.185 1.028-1.442-.437-2.386-1.607-2.095-2.616.3-1.005 1.74-1.478 3.195-1.024 1.44.435 2.386 1.596 2.086 2.612M85.714 206.67c.036 1.052-1.189 1.924-2.705 1.943-1.525.033-2.758-.818-2.774-1.852 0-1.062 1.197-1.926 2.721-1.951 1.516-.03 2.758.815 2.758 1.86M96.228 206.267c.182 1.026-.872 2.08-2.377 2.36-1.48.27-2.85-.363-3.039-1.38-.184-1.052.89-2.105 2.367-2.378 1.508-.262 2.857.355 3.049 1.398" />
                     </g>
                   </svg>
-                  <h2 className="text-primary-2 text-md font-semibold">
+                  <h2 className="text-secondary-1 text-lg font-medium">
                     Food menu app
                   </h2>
                 </div>
-
-                <p className="mt-4 text-secondary-5 text-sm mb-4">
+                <p className="mt-2 text-secondary-5 text-sm overflow-y-auto">
                   A food menu app, Built with Reactjs and Firebase
                 </p>
-                <div className="flex items-center justify-center gap-8 mt-auto">
+                <div className="flex items-center gap-6 mt-auto">
+                  <Link type="button" href={"/"}>
+                    <a className="transition font-semibold rounded-md text-sm justify-center inline-flex items-center hover:duration-150 px-4 py-2.5 border border-secondary-1 bg-secondary-1">
+                      Demo
+                    </a>
+                  </Link>
                   <Link
                     type="button"
-                    href={"https://github.com/muchristian/food-menu-app"}
+                    href={"https://github.com/muchristian/expense-app-tracker"}
                   >
                     <a className="transition font-semibold rounded-md text-sm justify-center inline-flex items-center hover:duration-150 px-4 py-2.5 border border-secondary-1 text-secondary-1">
                       View Code
@@ -591,9 +605,15 @@ const Home: NextPage = () => {
                   </Link>
                 </div>
               </div>
+              <Image
+                src={"/projects/expense_tracker.png"}
+                className="rounded-md"
+                layout="fill"
+                objectFit="cover"
+              />
             </div>
-            <div className="basis-1/5 flex-1 transition duration-300 group transform hover:-translate-y-2 hover:shadow-2xl cursor-pointer border border-secondary-5 rounded-md border-opacity-20">
-              <div className="relative px-6 py-6 flex flex-col bg-primary-4 bg-opacity-80 w-full h-full text-white rounded-2xl transition-all duration-300 transform group-hover:scale-105 text-xl">
+            <div className="transition duration-300 group transform hover:-translate-y-2 hover:shadow-2xl cursor-pointer">
+              <div className="px-6 py-6 flex flex-col bg-primary-4 bg-opacity-90 z-10 absolute w-full h-full text-white rounded-2xl opacity-0 transition-all duration-300 transform group-hover:scale-105 text-xl group-hover:opacity-100">
                 <div className="flex items-center gap-4">
                   <svg
                     width="24px"
@@ -635,19 +655,23 @@ const Home: NextPage = () => {
                       ></path>
                     </g>
                   </svg>
-                  <h2 className="text-primary-2 text-md font-semibold">
+                  <h2 className="text-secondary-1 text-lg font-medium">
                     Employee management backend
                   </h2>
                 </div>
-
-                <p className="mt-4 text-secondary-5 text-sm mb-4">
+                <p className="mt-2 text-secondary-5 text-sm overflow-y-auto">
                   A backend built with Nestjs and postgresql for managing
                   employees
                 </p>
-                <div className="flex items-center justify-center gap-8 mt-auto">
+                <div className="flex items-center gap-6 mt-auto">
+                  <Link type="button" href={"/"}>
+                    <a className="transition font-semibold rounded-md text-sm justify-center inline-flex items-center hover:duration-150 px-4 py-2.5 border border-secondary-1 bg-secondary-1">
+                      Demo
+                    </a>
+                  </Link>
                   <Link
                     type="button"
-                    href={"https://gitlab.com/mchris/employee-ms"}
+                    href={"https://github.com/muchristian/expense-app-tracker"}
                   >
                     <a className="transition font-semibold rounded-md text-sm justify-center inline-flex items-center hover:duration-150 px-4 py-2.5 border border-secondary-1 text-secondary-1">
                       View Code
@@ -655,10 +679,16 @@ const Home: NextPage = () => {
                   </Link>
                 </div>
               </div>
+              <Image
+                src={"/projects/expense_tracker.png"}
+                className="rounded-md"
+                layout="fill"
+                objectFit="cover"
+              />
             </div>
-            <div className="basis-1/5 flex-1 invisible"></div>
-            <div className="basis-1/5 flex-1 invisible"></div>
-            <div className="basis-1/5 flex-1 invisible"></div>
+            {/* <div className="sm:basis-4/12 flex-1 invisible"></div>
+            <div className="sm:basis-4/12 flex-1 invisible"></div>
+            <div className="sm:basis-4/12 flex-1 invisible"></div> */}
           </div>
         </div>
       </div>

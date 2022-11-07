@@ -4,10 +4,52 @@
 
 @import "~antd/dist/antd.css";
 
+.container {
+  width: 90%;
+}
+
 .greeting,
 .name,
 .title,
 .button-section,
 .profile-img {
   opacity: 0;
+}
+
+.portfolio-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: center;
+  height: 100%;
+  & > div {
+    height: 300px;
+  }
+  @media screen and (min-width: 960px) {
+    & > div {
+      flex-basis: calc(33.333333% - 16px) !important;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 960px) {
+    & > div {
+      flex-basis: calc(50% - 16px) !important;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    & > div {
+      flex-basis: 100% !important;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .navbar,
+  .home,
+  .skills,
+  .portfolio {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
 }

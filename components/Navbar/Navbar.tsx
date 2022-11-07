@@ -8,7 +8,9 @@ interface props {
 }
 export const Navbar: React.FC<props> = ({ children, classes }) => {
   return (
-    <nav className={`w-full flex justify-between items-center ${classes}`}>
+    <nav
+      className={`navbar w-full flex justify-between items-center ${classes}`}
+    >
       {children}
     </nav>
   );
