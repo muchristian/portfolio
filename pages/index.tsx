@@ -498,7 +498,10 @@ const Home: NextPage = () => {
                   for state management
                 </p>
                 <div className="flex items-center gap-6 mt-auto">
-                  <Link type="button" href={"/"}>
+                  <Link
+                    type="button"
+                    href={"/https://expense-app-tracker.vercel.app"}
+                  >
                     <a className="transition font-semibold rounded-md text-sm justify-center inline-flex items-center hover:duration-150 px-4 py-2.5 border border-secondary-1 bg-secondary-1">
                       Demo
                     </a>
@@ -521,7 +524,7 @@ const Home: NextPage = () => {
               />
             </div>
             <div className="transition duration-300 group transform hover:-translate-y-2 hover:shadow-2xl cursor-pointer">
-              <div className="px-6 py-6 flex flex-col bg-primary-4 bg-opacity-90 z-10 absolute w-full h-full text-white rounded-2xl opacity-0 transition-all duration-300 transform group-hover:scale-105 text-xl group-hover:opacity-100">
+              <div className="px-6 py-6 flex flex-col bg-primary-4 bg-opacity-90 z-10 absolute w-full h-full text-white rounded-2xl transition-all duration-300 transform group-hover:scale-105 text-xl">
                 <div className="flex items-center gap-4">
                   <svg
                     width="24px"
@@ -552,7 +555,9 @@ const Home: NextPage = () => {
                   </Link>
                   <Link
                     type="button"
-                    href={"https://github.com/muchristian/expense-app-tracker"}
+                    href={
+                      "https://github.com/muchristian/Course-Progress-Tracker-frontend"
+                    }
                   >
                     <a className="transition font-semibold rounded-md text-sm justify-center inline-flex items-center hover:duration-150 px-4 py-2.5 border border-secondary-1 text-secondary-1">
                       View Code
@@ -561,14 +566,14 @@ const Home: NextPage = () => {
                 </div>
               </div>
               <Image
-                src={"/projects/expense_tracker.png"}
+                src={"/background-img.png"}
                 className="rounded-md"
                 layout="fill"
                 objectFit="cover"
               />
             </div>
             <div className="transition duration-300 group transform hover:-translate-y-2 hover:shadow-2xl cursor-pointer">
-              <div className="px-6 py-6 flex flex-col bg-primary-4 bg-opacity-90 z-10 absolute w-full h-full text-white rounded-2xl opacity-0 transition-all duration-300 transform group-hover:scale-105 text-xl group-hover:opacity-100">
+              <div className="px-6 py-6 flex flex-col bg-primary-4 bg-opacity-90 z-10 absolute w-full h-full text-white rounded-2xl transition-all duration-300 transform group-hover:scale-105 text-xl">
                 <div className="flex items-center gap-4">
                   <svg
                     width="24px"
@@ -590,17 +595,14 @@ const Home: NextPage = () => {
                   A food menu app, Built with Reactjs and Firebase
                 </p>
                 <div className="flex items-center gap-6 mt-auto">
-                  <Link
-                    type="button"
-                    href={"/https://expense-app-tracker.vercel.app"}
-                  >
+                  <Link type="button" href={"/"}>
                     <a className="transition font-semibold rounded-md text-sm justify-center inline-flex items-center hover:duration-150 px-4 py-2.5 border border-secondary-1 bg-secondary-1">
                       Demo
                     </a>
                   </Link>
                   <Link
                     type="button"
-                    href={"https://github.com/muchristian/expense-app-tracker"}
+                    href={"https://github.com/muchristian/food-menu-app"}
                   >
                     <a className="transition font-semibold rounded-md text-sm justify-center inline-flex items-center hover:duration-150 px-4 py-2.5 border border-secondary-1 text-secondary-1">
                       View Code
@@ -609,14 +611,14 @@ const Home: NextPage = () => {
                 </div>
               </div>
               <Image
-                src={"/projects/expense_tracker.png"}
+                src={"/background-img.png"}
                 className="rounded-md"
                 layout="fill"
                 objectFit="cover"
               />
             </div>
             <div className="transition duration-300 group transform hover:-translate-y-2 hover:shadow-2xl cursor-pointer">
-              <div className="px-6 py-6 flex flex-col bg-primary-4 bg-opacity-90 z-10 absolute w-full h-full text-white rounded-2xl opacity-0 transition-all duration-300 transform group-hover:scale-105 text-xl group-hover:opacity-100">
+              <div className="px-6 py-6 flex flex-col bg-primary-4 bg-opacity-90 z-10 absolute w-full h-full text-white rounded-2xl transition-all duration-300 transform group-hover:scale-105 text-xl">
                 <div className="flex items-center gap-4">
                   <svg
                     width="24px"
@@ -674,7 +676,7 @@ const Home: NextPage = () => {
                   </Link>
                   <Link
                     type="button"
-                    href={"https://github.com/muchristian/expense-app-tracker"}
+                    href={"https://gitlab.com/mchris/employee-ms"}
                   >
                     <a className="transition font-semibold rounded-md text-sm justify-center inline-flex items-center hover:duration-150 px-4 py-2.5 border border-secondary-1 text-secondary-1">
                       View Code
@@ -683,7 +685,7 @@ const Home: NextPage = () => {
                 </div>
               </div>
               <Image
-                src={"/projects/expense_tracker.png"}
+                src={"/background-img.png"}
                 className="rounded-md"
                 layout="fill"
                 objectFit="cover"
