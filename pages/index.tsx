@@ -590,7 +590,10 @@ const Home: NextPage = () => {
                   A food menu app, Built with Reactjs and Firebase
                 </p>
                 <div className="flex items-center gap-6 mt-auto">
-                  <Link type="button" href={"/"}>
+                  <Link
+                    type="button"
+                    href={"/https://expense-app-tracker.vercel.app"}
+                  >
                     <a className="transition font-semibold rounded-md text-sm justify-center inline-flex items-center hover:duration-150 px-4 py-2.5 border border-secondary-1 bg-secondary-1">
                       Demo
                     </a>
