@@ -101,15 +101,15 @@ const Home: NextPage = () => {
         {/* <div className=" flex items-center "> */}
         <div className="py-16 px-32 flex flex-col gap-6 z-10 items-center justify-center">
           <div
-            className="relative rounded-full flex items-center justify-center bg-secondary-7"
-            style={{ height: "200px", width: "200px" }}
+            className="relative bg-secondary-7 rounded-full border-8 border-secondary-7"
+            style={{ height: "180px", width: "180px" }}
           >
             <Image
               className="rounded-full"
               src="/IMG-20200111-WA0006~2.jpg"
               alt="chris avatar"
-              width={"160px"}
-              height={"160px"}
+              layout="fill"
+              objectFit="cover"
             />
           </div>
           <h6 className="greeting text-secondary-3 text-sm font-medium">
