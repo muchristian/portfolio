@@ -60,11 +60,45 @@ const Home: NextPage = () => {
   return (
     <>
       <div
-        className="main relative h-screen overflow-y-scroll bg-primary-4"
+        className="main relative h-screen overflow-y-scroll overflow-x-hidden bg-primary-4"
         // style={{
         //   background: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='100%25' width='100%25'%3E%3Cdefs%3E%3Cpattern id='doodad' width='85' height='85' viewBox='0 0 40 40' patternUnits='userSpaceOnUse' patternTransform=''%3E%3Crect width='100%25' height='100%25' fill='rgba(6, 6, 6,1)'/%3E%3Ccircle cx='40' cy='20' r='1' fill='rgba(25, 25, 25,1)'/%3E%3Ccircle cx='0' cy='20' r='1' fill='rgba(25, 25, 25,1)'/%3E%3Ccircle cx='20' cy='40' r='1' fill='rgba(25, 25, 25,1)'/%3E%3Ccircle cx='20' cy='0' r='1' fill='rgba(25, 25, 25,1)'/%3E%3Ccircle cx='38' cy='2' r='1' fill='rgba(0, 0, 0,1)'/%3E%3Ccircle cx='2' cy='38' r='1' fill='rgba(0, 0, 0,1)'/%3E%3Ccircle cx='38' cy='38' r='1' fill='rgba(0, 0, 0,1)'/%3E%3Ccircle cx='2' cy='2' r='1' fill='rgba(0, 0, 0,1)'/%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23doodad)' height='200%25' width='200%25'/%3E%3C/svg%3E ")`,
         // }}
       >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="512"
+          width="512"
+          transform="rotate(60) translate(-148 56)"
+          className="ionicon absolute"
+          viewBox="0 0 512 512"
+        >
+          <path
+            d="M416 448H96a32.09 32.09 0 01-32-32V96a32.09 32.09 0 0132-32h320a32.09 32.09 0 0132 32v320a32.09 32.09 0 01-32 32z"
+            fill="none"
+            stroke="#f4b06025"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="24"
+          />
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="512"
+          width="512"
+          transform="rotate(60) translate(248 -56)"
+          className="ionicon absolute right-0"
+          viewBox="0 0 512 512"
+        >
+          <path
+            d="M416 448H96a32.09 32.09 0 01-32-32V96a32.09 32.09 0 0132-32h320a32.09 32.09 0 0132 32v320a32.09 32.09 0 01-32 32z"
+            fill="none"
+            stroke="#f4b06025"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="24"
+          />
+        </svg>
         <Navbar classes="sticky top-0 h-[4.5rem] px-32 z-20 backdrop-blur-sm">
           <>
             <h1 className="text-primary-2">CHRIS</h1>
@@ -85,12 +119,15 @@ const Home: NextPage = () => {
                 </Link>
               </li>
               <li>
-                <Button
-                  type="button"
-                  classes="px-4 py-2.5 border border-secondary-1 text-secondary-1"
-                >
-                  <span>Resume</span>
-                </Button>
+                <Link href="/Christian+Mucyo+CV+Full-Stack-1.pdf">
+                  <a
+                    target="_blank"
+                    type="button"
+                    className="transition font-semibold rounded-md text-sm justify-center inline-flex items-center hover:duration-150 px-4 py-2.5 border border-secondary-1 text-secondary-1 hover:bg-secondary-1 hover:text-primary-4"
+                  >
+                    Resume
+                  </a>
+                </Link>
               </li>
             </ul>
           </>
@@ -99,7 +136,49 @@ const Home: NextPage = () => {
         <Meta title="Home Page" />
 
         {/* <div className=" flex items-center "> */}
-        <div className="py-16 px-32 flex flex-col gap-6 z-10 items-center justify-center">
+        <div className="py-16 px-32 flex gap-6 z-10 items-center justify-between">
+          <div className="flex flex-col gap-6">
+            <h6 className="greeting text-secondary-3 text-sm font-medium">
+              <span className="text-base">👋</span> Hello, I'm
+            </h6>
+            <h1 className="name text-primary-2 text-5xl font-semibold">
+              Mucyo Christian
+            </h1>
+            <h2 className="title text-secondary-3 text-4xl font-semibold">
+              Software Developer
+            </h2>
+            <div className="button-section flex gap-4 mt-6">
+              <Button
+                type="button"
+                classes="px-4 py-2.5 border border-secondary-1 bg-secondary-1 gap-2 hover:bg-secondary-1/0 hover:text-secondary-1"
+              >
+                <>
+                  <span>Let's Talk</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="feather feather-send"
+                  >
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                </>
+              </Button>
+              <Button
+                type="button"
+                classes="px-4 py-2.5 border border-secondary-1 text-secondary-1 hover:bg-secondary-1 hover:text-primary-4"
+              >
+                <span>Portfolio</span>
+              </Button>
+            </div>
+          </div>
           <div
             className="relative bg-secondary-7 rounded-full border-8 border-secondary-7"
             style={{ height: "180px", width: "180px" }}
@@ -112,49 +191,9 @@ const Home: NextPage = () => {
               objectFit="cover"
             />
           </div>
-          <h6 className="greeting text-secondary-3 text-sm font-medium">
-            <span className="text-base">👋</span> Hello, I'm
-          </h6>
-          <h1 className="name text-primary-2 text-5xl font-semibold">
-            Mucyo Christian
-          </h1>
-          <h2 className="title text-secondary-3 text-4xl font-semibold">
-            Software Developer
-          </h2>
-          <div className="button-section flex gap-4 mt-6">
-            <Button
-              type="button"
-              classes="px-4 py-2.5 border border-secondary-1 bg-secondary-1 gap-2"
-            >
-              <>
-                <span>Let's Talk</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="feather feather-send"
-                >
-                  <line x1="22" y1="2" x2="11" y2="13"></line>
-                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                </svg>
-              </>
-            </Button>
-            <Button
-              type="button"
-              classes="px-4 py-2.5 border border-secondary-1 text-secondary-1"
-            >
-              <span>Portfolio</span>
-            </Button>
-          </div>
         </div>
         <div className="skills px-32 flex-col py-16 bg-secondary-7">
-          <div className="skills-header flex flex-col gap-2 items-center">
+          <div className="skills-header flex flex-col gap-2">
             <div className="flex gap-2 items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -163,16 +202,6 @@ const Home: NextPage = () => {
                 className="ionicon"
                 viewBox="0 0 512 512"
               >
-                {/* <circle
-                cx="256"
-                cy="256"
-                r="192"
-                fill="none"
-                stroke="#f4b060"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="32"
-              /> */}
                 <path
                   d="M416 448H96a32.09 32.09 0 01-32-32V96a32.09 32.09 0 0132-32h320a32.09 32.09 0 0132 32v320a32.09 32.09 0 01-32 32z"
                   fill="none"
@@ -191,11 +220,12 @@ const Home: NextPage = () => {
               My Skills And Tools
             </h3>
           </div>
-          <div className="skills-items flex flex-wrap gap-8 pt-20 justify-center">
+          <div className="skills-items grid grid-cols-4 gap-4 pt-20">
             <div
-              className="rounded-md flex flex-col border-2 border-md border-secondary-3 py-4 items-center gap-4 bg-secondary-3"
+              className="rounded-md flex flex-col border-2 border-md border-secondary-3 items-center justify-center gap-4 bg-secondary-3"
               style={{
-                width: "128px",
+                flexBasis: "20%",
+                height: "160px",
               }}
             >
               <Image
@@ -207,9 +237,10 @@ const Home: NextPage = () => {
               <h6 className="text-primary-2 text-sm font-semibold">React</h6>
             </div>
             <div
-              className="rounded-md flex flex-col border-2 border-md border-secondary-3 py-4 items-center gap-4 bg-secondary-3"
+              className="rounded-md flex flex-col border-2 border-md border-secondary-3 items-center justify-center gap-4 bg-secondary-3"
               style={{
-                width: "128px",
+                flexBasis: "20%",
+                height: "160px",
               }}
             >
               <Image
@@ -221,9 +252,40 @@ const Home: NextPage = () => {
               <h6 className="text-primary-2 text-sm font-semibold">Next.JS</h6>
             </div>
             <div
-              className="rounded-md flex flex-col border-2 border-md border-secondary-3 py-4 items-center gap-4 bg-secondary-3"
+              className="rounded-md flex flex-col border-2 border-md border-secondary-3 items-center justify-center gap-4 bg-secondary-3"
               style={{
-                width: "128px",
+                flexBasis: "20%",
+                height: "160px",
+              }}
+            >
+              <Image
+                src="/nodejs-seeklogo.com.svg"
+                alt="react logo"
+                width={80}
+                height={80}
+              />
+              <h6 className="text-primary-2 text-sm font-semibold">Node.JS</h6>
+            </div>
+            <div
+              className="rounded-md flex flex-col border-2 border-md border-secondary-3 items-center justify-center gap-4 bg-secondary-3"
+              style={{
+                flexBasis: "20%",
+                height: "160px",
+              }}
+            >
+              <Image
+                src="/nestjs-seeklogo.com.svg"
+                alt="react logo"
+                width={80}
+                height={80}
+              />
+              <h6 className="text-primary-2 text-sm font-semibold">Nest.JS</h6>
+            </div>
+            <div
+              className="rounded-md flex flex-col border-2 border-md border-secondary-3 items-center justify-center gap-4 bg-secondary-3"
+              style={{
+                flexBasis: "20%",
+                height: "160px",
               }}
             >
               <Image
@@ -237,109 +299,10 @@ const Home: NextPage = () => {
               </h6>
             </div>
             <div
-              className="rounded-md flex flex-col border-2 border-md border-secondary-3 py-4 items-center gap-4 bg-secondary-3"
+              className="rounded-md flex flex-col border-2 border-md border-secondary-3 items-center justify-center gap-4 bg-secondary-3"
               style={{
-                width: "128px",
-              }}
-            >
-              <Image
-                src="/ethereum-seeklogo.com.svg"
-                alt="react logo"
-                width={80}
-                height={80}
-              />
-              <h6 className="text-primary-2 text-sm font-semibold">Ethereum</h6>
-            </div>
-            <div
-              className="rounded-md flex flex-col border-2 border-md border-secondary-3 py-4 items-center gap-4 bg-secondary-3"
-              style={{
-                width: "128px",
-              }}
-            >
-              <Image
-                src="/tailwind-css-seeklogo.com.svg"
-                alt="react logo"
-                width={80}
-                height={80}
-              />
-              <h6 className="text-primary-2 text-sm font-semibold">
-                Tailwindcss
-              </h6>
-            </div>
-            <div
-              className="rounded-md flex flex-col border-2 border-md border-secondary-3 py-4 items-center gap-4 bg-secondary-3"
-              style={{
-                width: "128px",
-              }}
-            >
-              <Image
-                src="/sass-seeklogo.com.svg"
-                alt="react logo"
-                width={80}
-                height={80}
-              />
-              <h6 className="text-primary-2 text-sm font-semibold">Sass</h6>
-            </div>
-            <div
-              className="rounded-md flex flex-col border-2 border-md border-secondary-3 py-4 items-center gap-4 bg-secondary-3"
-              style={{
-                width: "128px",
-              }}
-            >
-              <Image
-                src="/nodejs-seeklogo.com.svg"
-                alt="react logo"
-                width={80}
-                height={80}
-              />
-              <h6 className="text-primary-2 text-sm font-semibold">Node.JS</h6>
-            </div>
-            <div
-              className="rounded-md flex flex-col border-2 border-md border-secondary-3 py-4 items-center gap-4 bg-secondary-3"
-              style={{
-                width: "128px",
-              }}
-            >
-              <Image
-                src="/nestjs-seeklogo.com.svg"
-                alt="react logo"
-                width={80}
-                height={80}
-              />
-              <h6 className="text-primary-2 text-sm font-semibold">Nest.JS</h6>
-            </div>
-            <div
-              className="rounded-md flex flex-col border-2 border-md border-secondary-3 py-4 items-center gap-4 bg-secondary-3"
-              style={{
-                width: "128px",
-              }}
-            >
-              <Image
-                src="/graphql-seeklogo.com.svg"
-                alt="react logo"
-                width={80}
-                height={80}
-              />
-              <h6 className="text-primary-2 text-sm font-semibold">GraphQL</h6>
-            </div>
-            <div
-              className="rounded-md flex flex-col border-2 border-md border-secondary-3 py-4 items-center gap-4 bg-secondary-3"
-              style={{
-                width: "128px",
-              }}
-            >
-              <Image
-                src="/solidity-seeklogo.com.svg"
-                alt="react logo"
-                width={80}
-                height={80}
-              />
-              <h6 className="text-primary-2 text-sm font-semibold">Solidity</h6>
-            </div>
-            <div
-              className="rounded-md flex flex-col border-2 border-md border-secondary-3 py-4 items-center gap-4 bg-secondary-3"
-              style={{
-                width: "128px",
+                flexBasis: "20%",
+                height: "160px",
               }}
             >
               <Image
@@ -353,9 +316,10 @@ const Home: NextPage = () => {
               </h6>
             </div>
             <div
-              className="rounded-md flex flex-col border-2 border-md border-secondary-3 py-4 items-center gap-4 bg-secondary-3"
+              className="rounded-md flex flex-col border-2 border-md border-secondary-3 items-center justify-center gap-4 bg-secondary-3"
               style={{
-                width: "128px",
+                flexBasis: "20%",
+                height: "160px",
               }}
             >
               <Image
@@ -366,25 +330,11 @@ const Home: NextPage = () => {
               />
               <h6 className="text-primary-2 text-sm font-semibold">MongoDB</h6>
             </div>
-
             <div
-              className="rounded-md flex flex-col border-2 border-md border-secondary-3 py-4 items-center gap-4 bg-secondary-3"
+              className="rounded-md flex flex-col border-2 border-md border-secondary-3 items-center justify-center gap-4 bg-secondary-3"
               style={{
-                width: "128px",
-              }}
-            >
-              <Image
-                src="/git-scm-icon.svg"
-                alt="react logo"
-                width={80}
-                height={80}
-              />
-              <h6 className="text-primary-2 text-sm font-semibold">Git</h6>
-            </div>
-            <div
-              className="rounded-md flex flex-col border-2 border-md border-secondary-3 py-4 items-center gap-4 bg-secondary-3"
-              style={{
-                width: "128px",
+                flexBasis: "20%",
+                height: "160px",
               }}
             >
               <Image
@@ -396,9 +346,58 @@ const Home: NextPage = () => {
               <h6 className="text-primary-2 text-sm font-semibold">Docker</h6>
             </div>
             <div
-              className="rounded-md flex flex-col border-2 border-md border-secondary-3 py-4 items-center gap-4 bg-secondary-3"
+              className="rounded-md flex flex-col border-2 border-md border-secondary-3 items-center justify-center gap-4 bg-secondary-3"
               style={{
-                width: "128px",
+                flexBasis: "20%",
+                height: "160px",
+              }}
+            >
+              <Image
+                src="/tailwind-css-seeklogo.com.svg"
+                alt="react logo"
+                width={80}
+                height={80}
+              />
+              <h6 className="text-primary-2 text-sm font-semibold">
+                Tailwindcss
+              </h6>
+            </div>
+            <div
+              className="rounded-md flex flex-col border-2 border-md border-secondary-3 items-center justify-center gap-4 bg-secondary-3"
+              style={{
+                flexBasis: "20%",
+                height: "160px",
+              }}
+            >
+              <Image
+                src="/sass-seeklogo.com.svg"
+                alt="react logo"
+                width={80}
+                height={80}
+              />
+              <h6 className="text-primary-2 text-sm font-semibold">Sass</h6>
+            </div>
+            <div
+              className="rounded-md flex flex-col border-2 border-md border-secondary-3 items-center justify-center gap-4 bg-secondary-3"
+              style={{
+                flexBasis: "20%",
+                height: "160px",
+              }}
+            >
+              <Image
+                src="/graphql-seeklogo.com.svg"
+                alt="react logo"
+                width={80}
+                height={80}
+              />
+              <h6 className="text-primary-2 text-sm font-semibold">GraphQL</h6>
+            </div>
+
+            <div
+              className="rounded-md flex flex-col border-2 border-md border-secondary-3 items-center justify-center gap-4 bg-secondary-3"
+              style={{
+                flexBasis: "20%",
+                height: "160px",
                 minHeight: "152px",
               }}
             >
@@ -418,9 +417,67 @@ const Home: NextPage = () => {
               </div>
               <h6 className="text-primary-2 text-xs font-semibold">CI CD</h6>
             </div>
+            <div
+              className="rounded-md flex flex-col border-2 border-md border-secondary-3 items-center justify-center gap-4 bg-secondary-3"
+              style={{
+                flexBasis: "20%",
+                height: "160px",
+              }}
+            >
+              <Image
+                src="/ethereum-seeklogo.com.svg"
+                alt="react logo"
+                width={80}
+                height={80}
+              />
+              <h6 className="text-primary-2 text-sm font-semibold">Ethereum</h6>
+            </div>
+            <div
+              className="rounded-md flex flex-col border-2 border-md border-secondary-3 items-center justify-center gap-4 bg-secondary-3"
+              style={{
+                flexBasis: "20%",
+                height: "160px",
+              }}
+            >
+              <Image
+                src="/solidity-seeklogo.com.svg"
+                alt="react logo"
+                width={80}
+                height={80}
+              />
+              <h6 className="text-primary-2 text-sm font-semibold">Solidity</h6>
+            </div>
+            <div
+              className="rounded-md flex flex-col items-center justify-center gap-4 bg-transparent"
+              style={{
+                flexBasis: "20%",
+                height: "160px",
+              }}
+            ></div>
+            <div
+              className="rounded-md flex flex-col items-center justify-center gap-4 bg-transparent"
+              style={{
+                flexBasis: "20%",
+                height: "160px",
+              }}
+            ></div>
+            <div
+              className="rounded-md flex flex-col items-center justify-center gap-4 bg-transparent"
+              style={{
+                flexBasis: "20%",
+                height: "160px",
+              }}
+            ></div>
+            <div
+              className="rounded-md flex flex-col items-center justify-center gap-4 bg-transparent"
+              style={{
+                flexBasis: "20%",
+                height: "160px",
+              }}
+            ></div>
           </div>
         </div>
-        <div className="portfolio min-h-screen px-32 flex-col items-center py-16">
+        <div className="portfolio px-32 flex-col items-center py-16">
           <div className="portfolio-header flex flex-col gap-2">
             <div className="flex gap-2 items-center">
               <svg
@@ -457,27 +514,16 @@ const Home: NextPage = () => {
               My Recent Projects
             </h3>
           </div>
-          <div className="portfolio-items w-full pt-20">
-            <div className="relative transition duration-300 group transform hover:-translate-y-2 hover:shadow-2xl cursor-pointer">
-              <div className="px-6 py-6 flex flex-col bg-primary-4 bg-opacity-90 z-10 absolute w-full h-full text-white rounded-2xl opacity-0 transition-all duration-300 transform group-hover:scale-105 text-xl group-hover:opacity-100">
-                <h2 className="text-secondary-1 text-lg font-medium">
-                  Applix websites
-                </h2>
-                <p className="mt-2 text-secondary-5 text-sm overflow-y-auto">
-                  A software company's website, I built it with phtml, and php
-                  composer using bootstrap framework
-                </p>
-                <div className="flex items-center gap-6 mt-auto">
-                  <Link type="button" href={"https://applix.africa/"}>
-                    <a className="transition font-semibold rounded-md text-sm justify-center inline-flex items-center hover:duration-150 px-4 py-2.5 border border-secondary-1 bg-secondary-1">
-                      Demo
-                    </a>
-                  </Link>
-                  <Link type="button" href={"/"}>
-                    <a className="transition font-semibold rounded-md text-sm justify-center inline-flex items-center hover:duration-150 px-4 py-2.5 border border-secondary-1 text-secondary-1">
-                      View Code
-                    </a>
-                  </Link>
+          <div className="portfolio-items grid grid-cols-2 gap-4 w-full pt-20">
+            <div className="relative flex items-end rounded transition duration-300 group transform cursor-pointer">
+              <div className="figure px-4 py-2 flex justify-between items-center bg-gradient-to-b from-primary-4/5 via-primary-4/50 to-primary-4/75 z-10 absolute w-full h-1/4 text-white rounded-b opacity-0 transition-all duration-300 transform text-xl group-hover:opacity-100">
+                <div className="flex flex-col gap-2 w-10/12">
+                  <h2 className="text-primary-2 text-xl font-medium">
+                    Applix website
+                  </h2>
+                  <p className="text-secondary-1 text-sm font-normal">
+                    Php, Composer, Bootstrap
+                  </p>
                 </div>
               </div>
               <Image
@@ -487,34 +533,42 @@ const Home: NextPage = () => {
                 objectFit="cover"
               />
             </div>
-            <div className="transition duration-300 group transform hover:-translate-y-2 hover:shadow-2xl cursor-pointer">
-              <div className="px-6 py-6 flex flex-col bg-primary-4 bg-opacity-90 z-10 absolute w-full h-full text-white rounded-2xl opacity-0 transition-all duration-300 transform group-hover:scale-105 text-xl group-hover:opacity-100">
-                <h2 className="text-secondary-1 text-lg font-medium">
-                  Expense Tracker
-                </h2>
-                <p className="mt-2 text-secondary-5 text-sm overflow-y-auto">
-                  An expense tracker app, built with Nextjs, Tailwindcss,
-                  Nodejs, koaJs, Strapi cms and postgres, It also Redux toolkit
-                  for state management
-                </p>
-                <div className="flex items-center gap-6 mt-auto">
-                  <Link
-                    type="button"
-                    href={"https://expense-app-tracker.vercel.app"}
-                  >
-                    <a className="transition font-semibold rounded-md text-sm justify-center inline-flex items-center hover:duration-150 px-4 py-2.5 border border-secondary-1 bg-secondary-1">
-                      Demo
-                    </a>
-                  </Link>
+            <div className="relative flex items-end rounded transition duration-300 group transform cursor-pointer">
+              <div className="figure px-4 py-2 flex items-center bg-gradient-to-b from-primary-4/5 via-primary-4/50 to-primary-4/75 z-10 w-full h-1/4 text-white rounded-b opacity-0 transition-all duration-300 transform text-xl group-hover:opacity-100">
+                <div className="flex flex-col gap-2 w-10/12">
+                  <h2 className="text-primary-2 text-xl font-medium">
+                    Expense Tracker
+                  </h2>
+                  <p className="text-secondary-1 text-sm font-normal truncate ...">
+                    Next.js, Node.js, Koa.js, Strapi, Postgres, Strapi, Postgres
+                  </p>
+                </div>
+                {/* <div className="flex items-center justify-end basis-3/12">
                   <Link
                     type="button"
                     href={"https://github.com/muchristian/expense-app-tracker"}
                   >
-                    <a className="transition font-semibold rounded-md text-sm justify-center inline-flex items-center hover:duration-150 px-4 py-2.5 border border-secondary-1 text-secondary-1">
-                      View Code
+                    <a className="transition font-semibold rounded-md text-sm justify-center inline-flex items-center hover:duration-150 px-2 py-1 bg-transparent border border-secondary-1 border-2 text-secondary-1 hover:bg-secondary-1 hover:text-primary-4">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="ionicon"
+                        viewBox="0 0 512 512"
+                        style={{
+                          height: "24px",
+                        }}
+                      >
+                        <path
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="32"
+                          d="M160 368L32 256l128-112M352 368l128-112-128-112M304 96l-96 320"
+                        />
+                      </svg>
                     </a>
                   </Link>
-                </div>
+                </div> */}
               </div>
               <Image
                 src={"/projects/expense_tracker.png"}
@@ -523,177 +577,116 @@ const Home: NextPage = () => {
                 objectFit="cover"
               />
             </div>
-            <div className="transition duration-300 group transform hover:-translate-y-2 hover:shadow-2xl cursor-pointer">
-              <div className="px-6 py-6 flex flex-col bg-primary-4 bg-opacity-90 z-10 absolute w-full h-full text-white rounded-2xl transition-all duration-300 transform group-hover:scale-105 text-xl">
-                <div className="flex items-center gap-4">
+          </div>
+        </div>
+        <div className="contact px-32 flex flex-col justify-center gap-8 items-end py-16">
+          <div className="flex flex-col gap-4">
+            <h6 className="self-end text-primary-2 text-5xl font-bold">
+              It's my pleasure to
+            </h6>
+            <h6 className="self-end text-primary-2 text-5xl font-bold">
+              hear from you!
+            </h6>
+          </div>
+          <Button
+            type="button"
+            classes="px-4 py-2.5 border border-secondary-1 bg-secondary-1 gap-2 hover:bg-secondary-1/0 hover:text-secondary-1"
+          >
+            <>
+              <span>Mail me</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="feather feather-send"
+              >
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </>
+          </Button>
+        </div>
+        <div className="footer px-32">
+          <hr className="text-primary-2/10"></hr>
+          <div className="flex items-center justify-between py-10">
+            <h2 className="text-2xl text-primary-2 font-semibold">
+              Mucyo Christian
+            </h2>
+            <div className="flex gap-4 items-center">
+              <Link
+                type="button"
+                href={"https://www.linkedin.com/in/mucyo-c-a90064128"}
+              >
+                <a className="transition font-semibold fill-secondary-1">
                   <svg
-                    width="24px"
-                    height="24px"
-                    viewBox="0 -3.5 256 256"
                     xmlns="http://www.w3.org/2000/svg"
-                    preserveAspectRatio="xMinYMin meet"
+                    className="ionicon"
+                    viewBox="0 0 512 512"
+                    style={{
+                      height: "32px",
+                    }}
                   >
-                    <g fill="#ffffff">
-                      <path d="M127.505 0C57.095 0 0 57.085 0 127.505c0 56.336 36.534 104.13 87.196 120.99 6.372 1.18 8.712-2.766 8.712-6.134 0-3.04-.119-13.085-.173-23.739-35.473 7.713-42.958-15.044-42.958-15.044-5.8-14.738-14.157-18.656-14.157-18.656-11.568-7.914.872-7.752.872-7.752 12.804.9 19.546 13.14 19.546 13.14 11.372 19.493 29.828 13.857 37.104 10.6 1.144-8.242 4.449-13.866 8.095-17.05-28.32-3.225-58.092-14.158-58.092-63.014 0-13.92 4.981-25.295 13.138-34.224-1.324-3.212-5.688-16.18 1.235-33.743 0 0 10.707-3.427 35.073 13.07 10.17-2.826 21.078-4.242 31.914-4.29 10.836.048 21.752 1.464 31.942 4.29 24.337-16.497 35.029-13.07 35.029-13.07 6.94 17.563 2.574 30.531 1.25 33.743 8.175 8.929 13.122 20.303 13.122 34.224 0 48.972-29.828 59.756-58.22 62.912 4.573 3.957 8.648 11.717 8.648 23.612 0 17.06-.148 30.791-.148 34.991 0 3.393 2.295 7.369 8.759 6.117 50.634-16.879 87.122-64.656 87.122-120.973C255.009 57.085 197.922 0 127.505 0" />
-                      <path d="M47.755 181.634c-.28.633-1.278.823-2.185.389-.925-.416-1.445-1.28-1.145-1.916.275-.652 1.273-.834 2.196-.396.927.415 1.455 1.287 1.134 1.923M54.027 187.23c-.608.564-1.797.302-2.604-.589-.834-.889-.99-2.077-.373-2.65.627-.563 1.78-.3 2.616.59.834.899.996 2.08.36 2.65M58.33 194.39c-.782.543-2.06.034-2.849-1.1-.781-1.133-.781-2.493.017-3.038.792-.545 2.05-.055 2.85 1.07.78 1.153.78 2.513-.019 3.069M65.606 202.683c-.699.77-2.187.564-3.277-.488-1.114-1.028-1.425-2.487-.724-3.258.707-.772 2.204-.555 3.302.488 1.107 1.026 1.445 2.496.7 3.258M75.01 205.483c-.307.998-1.741 1.452-3.185 1.028-1.442-.437-2.386-1.607-2.095-2.616.3-1.005 1.74-1.478 3.195-1.024 1.44.435 2.386 1.596 2.086 2.612M85.714 206.67c.036 1.052-1.189 1.924-2.705 1.943-1.525.033-2.758-.818-2.774-1.852 0-1.062 1.197-1.926 2.721-1.951 1.516-.03 2.758.815 2.758 1.86M96.228 206.267c.182 1.026-.872 2.08-2.377 2.36-1.48.27-2.85-.363-3.039-1.38-.184-1.052.89-2.105 2.367-2.378 1.508-.262 2.857.355 3.049 1.398" />
-                    </g>
+                    <title>Mucyo Christian</title>
+                    <path d="M444.17 32H70.28C49.85 32 32 46.7 32 66.89v374.72C32 461.91 49.85 480 70.28 480h373.78c20.54 0 35.94-18.21 35.94-38.39V66.89C480.12 46.7 464.6 32 444.17 32zm-273.3 373.43h-64.18V205.88h64.18zM141 175.54h-.46c-20.54 0-33.84-15.29-33.84-34.43 0-19.49 13.65-34.42 34.65-34.42s33.85 14.82 34.31 34.42c-.01 19.14-13.31 34.43-34.66 34.43zm264.43 229.89h-64.18V296.32c0-26.14-9.34-44-32.56-44-17.74 0-28.24 12-32.91 23.69-1.75 4.2-2.22 9.92-2.22 15.76v113.66h-64.18V205.88h64.18v27.77c9.34-13.3 23.93-32.44 57.88-32.44 42.13 0 74 27.77 74 87.64z" />
                   </svg>
-                  <h2 className="text-secondary-1 text-lg font-medium">
-                    Course progress tracker
-                  </h2>
-                </div>
-                <p className="mt-2 text-secondary-5 text-sm overflow-y-auto">
-                  A course progress tracker, for staying updated of how far is
-                  the on going course. It is built with Reactjs, Bootstrap 4,
-                  Sass, Python Django and mysql
-                </p>
-                <div className="flex items-center gap-6 mt-auto">
-                  <Link type="button" href={"/"}>
-                    <a className="transition font-semibold rounded-md text-sm justify-center inline-flex items-center hover:duration-150 px-4 py-2.5 border border-secondary-1 bg-secondary-1">
-                      Demo
-                    </a>
-                  </Link>
-                  <Link
-                    type="button"
-                    href={
-                      "https://github.com/muchristian/Course-Progress-Tracker-frontend"
-                    }
-                  >
-                    <a className="transition font-semibold rounded-md text-sm justify-center inline-flex items-center hover:duration-150 px-4 py-2.5 border border-secondary-1 text-secondary-1">
-                      View Code
-                    </a>
-                  </Link>
-                </div>
-              </div>
-              <Image
-                src={"/background-img.png"}
-                className="rounded-md"
-                layout="fill"
-                objectFit="cover"
-              />
-            </div>
-            <div className="transition duration-300 group transform hover:-translate-y-2 hover:shadow-2xl cursor-pointer">
-              <div className="px-6 py-6 flex flex-col bg-primary-4 bg-opacity-90 z-10 absolute w-full h-full text-white rounded-2xl transition-all duration-300 transform group-hover:scale-105 text-xl">
-                <div className="flex items-center gap-4">
+                </a>
+              </Link>
+              <Link
+                type="button"
+                href={"https://discord.com/users/christian#4266"}
+              >
+                <a className="transition font-semibold fill-secondary-1">
                   <svg
-                    width="24px"
-                    height="24px"
-                    viewBox="0 -3.5 256 256"
                     xmlns="http://www.w3.org/2000/svg"
-                    preserveAspectRatio="xMinYMin meet"
+                    className="ionicon"
+                    viewBox="0 0 512 512"
+                    style={{
+                      height: "32px",
+                    }}
                   >
-                    <g fill="#ffffff">
-                      <path d="M127.505 0C57.095 0 0 57.085 0 127.505c0 56.336 36.534 104.13 87.196 120.99 6.372 1.18 8.712-2.766 8.712-6.134 0-3.04-.119-13.085-.173-23.739-35.473 7.713-42.958-15.044-42.958-15.044-5.8-14.738-14.157-18.656-14.157-18.656-11.568-7.914.872-7.752.872-7.752 12.804.9 19.546 13.14 19.546 13.14 11.372 19.493 29.828 13.857 37.104 10.6 1.144-8.242 4.449-13.866 8.095-17.05-28.32-3.225-58.092-14.158-58.092-63.014 0-13.92 4.981-25.295 13.138-34.224-1.324-3.212-5.688-16.18 1.235-33.743 0 0 10.707-3.427 35.073 13.07 10.17-2.826 21.078-4.242 31.914-4.29 10.836.048 21.752 1.464 31.942 4.29 24.337-16.497 35.029-13.07 35.029-13.07 6.94 17.563 2.574 30.531 1.25 33.743 8.175 8.929 13.122 20.303 13.122 34.224 0 48.972-29.828 59.756-58.22 62.912 4.573 3.957 8.648 11.717 8.648 23.612 0 17.06-.148 30.791-.148 34.991 0 3.393 2.295 7.369 8.759 6.117 50.634-16.879 87.122-64.656 87.122-120.973C255.009 57.085 197.922 0 127.505 0" />
-                      <path d="M47.755 181.634c-.28.633-1.278.823-2.185.389-.925-.416-1.445-1.28-1.145-1.916.275-.652 1.273-.834 2.196-.396.927.415 1.455 1.287 1.134 1.923M54.027 187.23c-.608.564-1.797.302-2.604-.589-.834-.889-.99-2.077-.373-2.65.627-.563 1.78-.3 2.616.59.834.899.996 2.08.36 2.65M58.33 194.39c-.782.543-2.06.034-2.849-1.1-.781-1.133-.781-2.493.017-3.038.792-.545 2.05-.055 2.85 1.07.78 1.153.78 2.513-.019 3.069M65.606 202.683c-.699.77-2.187.564-3.277-.488-1.114-1.028-1.425-2.487-.724-3.258.707-.772 2.204-.555 3.302.488 1.107 1.026 1.445 2.496.7 3.258M75.01 205.483c-.307.998-1.741 1.452-3.185 1.028-1.442-.437-2.386-1.607-2.095-2.616.3-1.005 1.74-1.478 3.195-1.024 1.44.435 2.386 1.596 2.086 2.612M85.714 206.67c.036 1.052-1.189 1.924-2.705 1.943-1.525.033-2.758-.818-2.774-1.852 0-1.062 1.197-1.926 2.721-1.951 1.516-.03 2.758.815 2.758 1.86M96.228 206.267c.182 1.026-.872 2.08-2.377 2.36-1.48.27-2.85-.363-3.039-1.38-.184-1.052.89-2.105 2.367-2.378 1.508-.262 2.857.355 3.049 1.398" />
-                    </g>
+                    <title>christian#4266</title>
+                    <path d="M464 66.52A50 50 0 00414.12 17L97.64 16A49.65 49.65 0 0048 65.52V392c0 27.3 22.28 48 49.64 48H368l-13-44 109 100zM324.65 329.81s-8.72-10.39-16-19.32C340.39 301.55 352.5 282 352.5 282a139 139 0 01-27.85 14.25 173.31 173.31 0 01-35.11 10.39 170.05 170.05 0 01-62.72-.24 184.45 184.45 0 01-35.59-10.4 141.46 141.46 0 01-17.68-8.21c-.73-.48-1.45-.72-2.18-1.21-.49-.24-.73-.48-1-.48-4.36-2.42-6.78-4.11-6.78-4.11s11.62 19.09 42.38 28.26c-7.27 9.18-16.23 19.81-16.23 19.81-53.51-1.69-73.85-36.47-73.85-36.47 0-77.06 34.87-139.62 34.87-139.62 34.87-25.85 67.8-25.12 67.8-25.12l2.42 2.9c-43.59 12.32-63.44 31.4-63.44 31.4s5.32-2.9 14.28-6.77c25.91-11.35 46.5-14.25 55-15.21a24 24 0 014.12-.49 205.62 205.62 0 0148.91-.48 201.62 201.62 0 0172.89 22.95s-19.13-18.15-60.3-30.45l3.39-3.86s33.17-.73 67.81 25.16c0 0 34.87 62.56 34.87 139.62 0-.28-20.35 34.5-73.86 36.19z" />
+                    <path d="M212.05 218c-13.8 0-24.7 11.84-24.7 26.57s11.14 26.57 24.7 26.57c13.8 0 24.7-11.83 24.7-26.57.25-14.76-10.9-26.57-24.7-26.57zM300.43 218c-13.8 0-24.7 11.84-24.7 26.57s11.14 26.57 24.7 26.57c13.81 0 24.7-11.83 24.7-26.57S314 218 300.43 218z" />
                   </svg>
-                  <h2 className="text-secondary-1 text-lg font-medium">
-                    Food menu app
-                  </h2>
-                </div>
-                <p className="mt-2 text-secondary-5 text-sm overflow-y-auto">
-                  A food menu app, Built with Reactjs and Firebase
-                </p>
-                <div className="flex items-center gap-6 mt-auto">
-                  <Link type="button" href={"/"}>
-                    <a className="transition font-semibold rounded-md text-sm justify-center inline-flex items-center hover:duration-150 px-4 py-2.5 border border-secondary-1 bg-secondary-1">
-                      Demo
-                    </a>
-                  </Link>
-                  <Link
-                    type="button"
-                    href={"https://github.com/muchristian/food-menu-app"}
-                  >
-                    <a className="transition font-semibold rounded-md text-sm justify-center inline-flex items-center hover:duration-150 px-4 py-2.5 border border-secondary-1 text-secondary-1">
-                      View Code
-                    </a>
-                  </Link>
-                </div>
-              </div>
-              <Image
-                src={"/background-img.png"}
-                className="rounded-md"
-                layout="fill"
-                objectFit="cover"
-              />
-            </div>
-            <div className="transition duration-300 group transform hover:-translate-y-2 hover:shadow-2xl cursor-pointer">
-              <div className="px-6 py-6 flex flex-col bg-primary-4 bg-opacity-90 z-10 absolute w-full h-full text-white rounded-2xl transition-all duration-300 transform group-hover:scale-105 text-xl">
-                <div className="flex items-center gap-4">
+                </a>
+              </Link>
+              <Link type="button" href={"https://github.com/muchristian"}>
+                <a className="transition font-semibold fill-secondary-1">
                   <svg
-                    width="24px"
-                    height="24px"
-                    viewBox="0 -10 256 256"
-                    version="1.1"
                     xmlns="http://www.w3.org/2000/svg"
-                    xmlnsXlink="http://www.w3.org/1999/xlink"
-                    preserveAspectRatio="xMidYMid"
+                    className="ionicon"
+                    viewBox="0 0 512 512"
+                    style={{
+                      height: "32px",
+                    }}
                   >
-                    <g>
-                      <path
-                        d="M128.07485,236.074667 L128.07485,236.074667 L175.17885,91.1043048 L80.9708495,91.1043048 L128.07485,236.074667 L128.07485,236.074667 Z"
-                        fill="#E24329"
-                      ></path>
-                      <path
-                        d="M128.07485,236.074423 L80.9708495,91.104061 L14.9557638,91.104061 L128.07485,236.074423 L128.07485,236.074423 Z"
-                        fill="#FC6D26"
-                      ></path>
-                      <path
-                        d="M14.9558857,91.1044267 L14.9558857,91.1044267 L0.641828571,135.159589 C-0.663771429,139.17757 0.766171429,143.57955 4.18438095,146.06275 L128.074971,236.074789 L14.9558857,91.1044267 L14.9558857,91.1044267 Z"
-                        fill="#FCA326"
-                      ></path>
-                      <path
-                        d="M14.9558857,91.1045486 L80.9709714,91.1045486 L52.6000762,3.79026286 C51.1408762,-0.703146667 44.7847619,-0.701927619 43.3255619,3.79026286 L14.9558857,91.1045486 L14.9558857,91.1045486 Z"
-                        fill="#E24329"
-                      ></path>
-                      <path
-                        d="M128.07485,236.074423 L175.17885,91.104061 L241.193935,91.104061 L128.07485,236.074423 L128.07485,236.074423 Z"
-                        fill="#FC6D26"
-                      ></path>
-                      <path
-                        d="M241.193935,91.1044267 L241.193935,91.1044267 L255.507992,135.159589 C256.813592,139.17757 255.38365,143.57955 251.96544,146.06275 L128.07485,236.074789 L241.193935,91.1044267 L241.193935,91.1044267 Z"
-                        fill="#FCA326"
-                      ></path>
-                      <path
-                        d="M241.193935,91.1045486 L175.17885,91.1045486 L203.549745,3.79026286 C205.008945,-0.703146667 211.365059,-0.701927619 212.824259,3.79026286 L241.193935,91.1045486 L241.193935,91.1045486 Z"
-                        fill="#E24329"
-                      ></path>
-                    </g>
+                    <title>mucyo chris</title>
+                    <path d="M256 32C132.3 32 32 134.9 32 261.7c0 101.5 64.2 187.5 153.2 217.9a17.56 17.56 0 003.8.4c8.3 0 11.5-6.1 11.5-11.4 0-5.5-.2-19.9-.3-39.1a102.4 102.4 0 01-22.6 2.7c-43.1 0-52.9-33.5-52.9-33.5-10.2-26.5-24.9-33.6-24.9-33.6-19.5-13.7-.1-14.1 1.4-14.1h.1c22.5 2 34.3 23.8 34.3 23.8 11.2 19.6 26.2 25.1 39.6 25.1a63 63 0 0025.6-6c2-14.8 7.8-24.9 14.2-30.7-49.7-5.8-102-25.5-102-113.5 0-25.1 8.7-45.6 23-61.6-2.3-5.8-10-29.2 2.2-60.8a18.64 18.64 0 015-.5c8.1 0 26.4 3.1 56.6 24.1a208.21 208.21 0 01112.2 0c30.2-21 48.5-24.1 56.6-24.1a18.64 18.64 0 015 .5c12.2 31.6 4.5 55 2.2 60.8 14.3 16.1 23 36.6 23 61.6 0 88.2-52.4 107.6-102.3 113.3 8 7.1 15.2 21.1 15.2 42.5 0 30.7-.3 55.5-.3 63 0 5.4 3.1 11.5 11.4 11.5a19.35 19.35 0 004-.4C415.9 449.2 480 363.1 480 261.7 480 134.9 379.7 32 256 32z" />
                   </svg>
-                  <h2 className="text-secondary-1 text-lg font-medium">
-                    Employee management backend
-                  </h2>
-                </div>
-                <p className="mt-2 text-secondary-5 text-sm overflow-y-auto">
-                  A backend built with Nestjs and postgresql for managing
-                  employees
-                </p>
-                <div className="flex items-center gap-6 mt-auto">
-                  <Link type="button" href={"/"}>
-                    <a className="transition font-semibold rounded-md text-sm justify-center inline-flex items-center hover:duration-150 px-4 py-2.5 border border-secondary-1 bg-secondary-1">
-                      Demo
-                    </a>
-                  </Link>
-                  <Link
-                    type="button"
-                    href={"https://gitlab.com/mchris/employee-ms"}
+                </a>
+              </Link>
+              <Link type="button" href={"https://gitlab.com/mchris"}>
+                <a className="transition font-semibold fill-secondary-1">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="ionicon"
+                    viewBox="0 0 512 512"
+                    style={{
+                      height: "32px",
+                    }}
                   >
-                    <a className="transition font-semibold rounded-md text-sm justify-center inline-flex items-center hover:duration-150 px-4 py-2.5 border border-secondary-1 text-secondary-1">
-                      View Code
-                    </a>
-                  </Link>
-                </div>
-              </div>
-              <Image
-                src={"/background-img.png"}
-                className="rounded-md"
-                layout="fill"
-                objectFit="cover"
-              />
+                    <title>m chris</title>
+                    <path d="M494.07 281.6l-25.18-78.08a11 11 0 00-.61-2.1l-50.5-156.94a20.08 20.08 0 00-19.17-13.82 19.77 19.77 0 00-18.95 13.94l-48.14 149.55h-152L131.34 44.59a19.76 19.76 0 00-18.86-13.94h-.11a20.15 20.15 0 00-19.12 14L42.7 201.73c0 .14-.11.26-.16.4l-25.63 79.48a29.15 29.15 0 0010.44 32.46l221.44 162.41a11.25 11.25 0 0013.38-.07l221.48-162.34a29.13 29.13 0 0010.42-32.47m-331-64.51l61.73 191.76L76.63 217.09m209.64 191.8l59.19-183.84 2.55-8h86.52L300.47 390.44M398.8 59.31l43.37 134.83h-86.82M324.16 217l-43 133.58-25.66 79.56L186.94 217M112.27 59.31l43.46 134.83H69M40.68 295.58a6.19 6.19 0 01-2.21-6.9l19-59 139.61 180.59m273.26-114.69L313.92 410.22l.52-.69L453.5 229.64l19 59a6.2 6.2 0 01-2.19 6.92" />
+                  </svg>
+                </a>
+              </Link>
             </div>
-            {/* <div className="sm:basis-4/12 flex-1 invisible"></div>
-            <div className="sm:basis-4/12 flex-1 invisible"></div>
-            <div className="sm:basis-4/12 flex-1 invisible"></div> */}
           </div>
         </div>
       </div>
