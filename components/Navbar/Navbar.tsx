@@ -7,11 +7,5 @@ interface props {
   classes: string;
 }
 export const Navbar: React.FC<props> = ({ children, classes }) => {
-  return (
-    <nav
-      className={`navbar w-full flex justify-between items-center ${classes}`}
-    >
-      {children}
-    </nav>
-  );
+  return <nav className={`navbar w-full ${classes}`}>{children}</nav>;
 };

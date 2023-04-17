@@ -65,24 +65,27 @@ module.exports = {
     //   "h-fit": "fit-content",
     // },
     fontFamily: {
-      mont: ["Montserrat"],
+      mont: ["Montserrat", "sans-serif"],
     },
     colors: {
+      // primary: "#d97706",
+      // secondary: "#0e0f10",
       primary: {
         1: "#060606",
         2: "#FFF",
         3: "#020202",
         4: "#14141b",
+        5: "#000000",
       },
       body: "#6A7185",
       secondary: {
         1: "#f4b060",
         2: "#232a31",
-        3: "#3D3D3D",
+        3: "#2E3235",
         4: "#141418",
         5: "#A4A4A4",
         6: "#F8FDF8",
-        7: "#191920",
+        7: "#0e0f10",
       },
     },
     extend: {

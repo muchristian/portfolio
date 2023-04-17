@@ -2,51 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "~antd/dist/antd.css";
+body {
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+}
 
 .container {
-  width: 90%;
+  max-width: 1170px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-.greeting,
-.name,
-.title,
-.button-section,
-.profile-img {
-  opacity: 0;
+.container.small {
+  max-width: 1140px;
 }
 
-.portfolio-items {
-  & > div {
-    height: 288px;
-  }
-
-  // @media screen and (min-width: 1536px) {
-  //   & > div {
-  //     flex-basis: calc(33.333333% - 16px) !important;
-  //   }
-  // }
-
-  // @media (min-width: 768px) and (max-width: 1536px) {
-  //   & > div {
-  //     flex-basis: calc(50% - 16px) !important;
-  //   }
-  // }
-
-  // @media screen and (max-width: 768px) {
-  //   & > div {
-  //     flex-basis: 100% !important;
-  //   }
-  // }
+.container.xs-small {
+  max-width: 1040px;
 }
 
-@media screen and (max-width: 1200px) {
-  .navbar,
-  .home,
-  .skills,
-  .portfolio,
-  .contact {
-    padding-left: 64px;
-    padding-right: 64px;
+section {
+  position: relative;
+  width: 100%;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.home {
+  position: relative;
+  width: 100%;
+  top: 0;
+  left: 0;
+  margin: 0;
+  overflow: hidden;
+  padding: 128px 0;
+}
+
+.home-fullscreen::before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 1;
+}
+
+.home-fullscreen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  z-index: 0;
+}
+
+.about {
+  p {
+    font-size: 16px;
   }
 }
