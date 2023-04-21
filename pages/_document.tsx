@@ -6,7 +6,7 @@ import { AppConfig } from "../utils/AppConfig";
 class MyDocument extends Document {
   render() {
     return (
-      <Html lang={AppConfig.locale}>
+      <Html lang={AppConfig.locale} className="dark">
         <Head />
         <body className="font-mont font-normal text-primary-2/80">
           <Main />
