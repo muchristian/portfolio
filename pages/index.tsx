@@ -5,6 +5,7 @@ import { Navbar } from "../components/Navbar/Navbar";
 import { Meta } from "../layouts/Meta";
 import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
+import { Banner } from "../components/banner/banner";
 
 const Home: NextPage = () => {
   const [themeType, setThemeType] = useState<string>("");
@@ -101,28 +102,28 @@ const Home: NextPage = () => {
           <ul className="hidden lg:flex items-center gap-16">
             <li>
               <Link href="#">
-                <a className="text-secondary-7/90 dark:text-primary-2/90">
+                <a className="text-secondary-7/90 dark:text-primary-2/90 hover:text-secondary-1 hover:dark:text-secondary-1 transition duration-[250] ease-in-out">
                   About
                 </a>
               </Link>
             </li>
             <li>
               <Link href="#">
-                <a className="text-secondary-7/90 dark:text-primary-2/90">
+                <a className="text-secondary-7/90 dark:text-primary-2/90 hover:text-secondary-1 hover:dark:text-secondary-1 transition duration-[250] ease-in-out">
                   Portfolio
                 </a>
               </Link>
             </li>
             <li>
               <Link href="#">
-                <a className="text-secondary-7/90 dark:text-primary-2/90">
+                <a className="text-secondary-7/90 dark:text-primary-2/90 hover:text-secondary-1 hover:dark:text-secondary-1 transition duration-[250] ease-in-out">
                   Blog
                 </a>
               </Link>
             </li>
             <li>
               <Link href="#">
-                <a className="text-secondary-7/90 dark:text-primary-2/90">
+                <a className="text-secondary-7/90 dark:text-primary-2/90 hover:text-secondary-1 hover:dark:text-secondary-1 transition duration-[250] ease-in-out">
                   Contact
                 </a>
               </Link>
@@ -156,27 +157,30 @@ const Home: NextPage = () => {
         <div className="container max-w-[1176px] px-6 h-full flex items-center gap-2">
           <div className="basis-10/12 lg:basis-8/12">
             <div className="flex flex-col space-y-8">
-              <h6 className="greeting text-secondary-3 text-sm font-medium">
-                <span className="text-base">👋</span> Hello, I'm
+              <h6 className="greeting text-sm font-medium">
+                <span className="text-base text-primary-2">👋</span>{" "}
+                <span className="text-secondary-7 dark:text-primary-2/80">
+                  Hello, I'm
+                </span>
               </h6>
               <h1 className="name text-secondary-7 dark:text-primary-2 text-6xl font-semibold">
                 Mucyo Christian
               </h1>
-              <h2 className="title text-secondary-3 text-4xl font-semibold">
+              {/* <h2 className="title text-secondary-3 text-4xl font-semibold">
                 Software Engineer
-              </h2>
+              </h2> */}
               <p className="text-secondary-7/80 dark:text-primary-2/80">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-                iaculis diam varius diam ultricies lacinia.{" "}
-                <b>
-                  Mauris lacus tellus, ultrices eu volutpat sit amet, finibus a
-                  ipsum.
-                </b>{" "}
-                Nullam sit amet pretium felis.
+                A <span className="text-secondary-1">software engineer</span>{" "}
+                with 4 years of experience and established proficiency in{" "}
+                <span className="text-secondary-1">developing</span>,{" "}
+                <span className="text-secondary-1">deploying</span>, and{" "}
+                <span className="text-secondary-1">maintaining</span>{" "}
+                production-level backend endpoints as well as seamless
+                front-end.
               </p>
               <Button
                 type="button"
-                classes="w-[210px] px-6 py-4 !rounded-3xl border bg-secondary-7 dark:bg-secondary-1/80 text-primary-2 border-secondary-7 dark:border-secondary-1/60 gap-4 hover:bg-secondary-1/0 hover:text-secondary-1"
+                classes="w-[220px] px-6 py-4 !rounded-3xl bg-secondary-7 dark:bg-secondary-1/80 text-primary-2 gap-4 hover:text-secondary-1 dark:hover:text-secondary-7"
               >
                 <>
                   <span>DOWNLOAD CV</span>
@@ -351,7 +355,7 @@ const Home: NextPage = () => {
         </div>
       </section>
       <section className="portfolio py-16 bg-primary-2 dark:bg-primary-3">
-        <div className="container max-w-[1024px] px-6 flex flex-col opacity-90">
+        <div className="container max-w-[1176px] px-6 flex flex-col opacity-90">
           <div className="sm:w-8/12 md:w-7/12 lg:w-6/12 self-center">
             <div className="flex flex-col gap-8 text-center">
               <h3 className="text-secondary-7 dark:text-primary-2 text-5xl font-bold">
@@ -364,115 +368,159 @@ const Home: NextPage = () => {
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 mt-12 gap-x-8 gap-y-10">
-            <div className="relative flex flex-col gap-4 rounded transition">
-              <div className="relative h-[300px] md:h-[260px] lg:h-[260px] cursor-pointer">
-                <Image
-                  src={"/projects/expense_tracker.png"}
-                  className="rounded-lg"
-                  layout="fill"
-                  objectFit="cover"
-                />
-              </div>
-              <div className="flex flex-col space-y-4">
-                <h6 className="text-secondary-7/90 dark:text-primary-2/90 text-base font-bold cursor-pointer">
-                  Applix Website
-                </h6>
-                <p className="text-sm text-secondary-7/80 dark:text-primary-2/80">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-                  iaculis diam varius diam ultricies lacinia.
-                </p>
-                <div className="flex space-x-2">
-                  <div className="px-3 py-1.5 rounded-lg flex justify-center bg-secondary-3">
-                    <h6 className="text-secondary-1 text-xs font-medium">
-                      Php
-                    </h6>
-                  </div>
-                  <div className="px-3 py-1.5 rounded-lg flex justify-center bg-secondary-3">
-                    <h6 className="text-secondary-1 text-xs font-medium">
-                      Composer
-                    </h6>
-                  </div>
-                  <div className="px-3 py-1.5 rounded-lg flex justify-center bg-secondary-3">
-                    <h6 className="text-secondary-1 text-xs font-medium">
-                      Bootstrap
-                    </h6>
+            <div className="p-6 bg-secondary-1/10 dark:bg-secondary-7 rounded">
+              <div className="relative flex flex-col gap-4 rounded transition">
+                <div className="relative h-[300px] md:h-[300px] lg:h-[276px] cursor-pointer">
+                  <Image
+                    src={"/projects/expense_tracker.png"}
+                    className="rounded overflow-hidden h-full"
+                    layout="fill"
+                    // objectFit="contain"
+                  />
+                </div>
+                <div className="flex flex-col space-y-4">
+                  <h6 className="text-secondary-7/90 dark:text-primary-2/90 text-base font-bold cursor-pointer">
+                    WealthTrack Application
+                  </h6>
+                  <p className="text-sm text-secondary-7/80 dark:text-primary-2/80">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Cras iaculis diam varius diam ultricies lacinia.
+                  </p>
+                  <div className="flex space-x-2">
+                    <div className="px-3 py-1.5 rounded-lg flex justify-center bg-secondary-3">
+                      <h6 className="text-secondary-1 text-xs font-medium">
+                        Php
+                      </h6>
+                    </div>
+                    <div className="px-3 py-1.5 rounded-lg flex justify-center bg-secondary-3">
+                      <h6 className="text-secondary-1 text-xs font-medium">
+                        Composer
+                      </h6>
+                    </div>
+                    <div className="px-3 py-1.5 rounded-lg flex justify-center bg-secondary-3">
+                      <h6 className="text-secondary-1 text-xs font-medium">
+                        Bootstrap
+                      </h6>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="relative flex flex-col gap-4 rounded transition">
-              <div className="relative h-[300px] md:h-[260px] lg:h-[260px] cursor-pointer">
-                <Image
-                  src={"/projects/inv-ms-1.png"}
-                  className="rounded-lg"
-                  layout="fill"
-                  // objectFit="cover"
-                />
-              </div>
-              <div className="flex flex-col space-y-4">
-                <h6 className="text-secondary-7/90 dark:text-primary-2/90 text-base font-bold cursor-pointer">
-                  Applix Website
-                </h6>
-                <p className="text-sm text-secondary-7/80 dark:text-primary-2/80">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-                  iaculis diam varius diam ultricies lacinia.
-                </p>
-                <div className="flex space-x-2">
-                  <div className="px-3 py-1.5 rounded-lg flex justify-center bg-secondary-3">
-                    <h6 className="text-secondary-1 text-xs font-medium">
-                      React
-                    </h6>
-                  </div>
-                  <div className="px-3 py-1.5 rounded-lg flex justify-center bg-secondary-3">
-                    <h6 className="text-secondary-1 text-xs font-medium">
-                      Typescript
-                    </h6>
-                  </div>
-                  <div className="px-3 py-1.5 rounded-lg flex justify-center bg-secondary-3">
-                    <h6 className="text-secondary-1 text-xs font-medium">
-                      Redux TLK
-                    </h6>
-                  </div>
-                  <div className="px-3 py-1.5 rounded-lg flex justify-center bg-secondary-3">
-                    <h6 className="text-secondary-1 text-xs font-medium">
-                      Express
-                    </h6>
+            <div className="p-6 bg-secondary-1/10 dark:bg-secondary-7 rounded">
+              <div className="relative flex flex-col gap-4 rounded transition">
+                <div className="relative h-[300px] md:h-[300px] lg:h-[276px] cursor-pointer">
+                  <Image
+                    src={"/projects/custom_pos.png"}
+                    className="rounded overflow-hidden h-full"
+                    layout="fill"
+                    // objectFit="contain"
+                  />
+                </div>
+                <div className="flex flex-col space-y-4">
+                  <h6 className="text-secondary-7/90 dark:text-primary-2/90 text-base font-bold cursor-pointer">
+                    Customized POS System
+                  </h6>
+                  <p className="text-sm text-secondary-7/80 dark:text-primary-2/80">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Cras iaculis diam varius diam ultricies lacinia.
+                  </p>
+                  <div className="flex space-x-2">
+                    <div className="px-3 py-1.5 rounded-lg flex justify-center bg-secondary-3">
+                      <h6 className="text-secondary-1 text-xs font-medium">
+                        React
+                      </h6>
+                    </div>
+                    <div className="px-3 py-1.5 rounded-lg flex justify-center bg-secondary-3">
+                      <h6 className="text-secondary-1 text-xs font-medium">
+                        Typescript
+                      </h6>
+                    </div>
+                    <div className="px-3 py-1.5 rounded-lg flex justify-center bg-secondary-3">
+                      <h6 className="text-secondary-1 text-xs font-medium">
+                        Redux TLK
+                      </h6>
+                    </div>
+                    <div className="px-3 py-1.5 rounded-lg flex justify-center bg-secondary-3">
+                      <h6 className="text-secondary-1 text-xs font-medium">
+                        Express
+                      </h6>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="relative flex flex-col gap-4 rounded transition">
-              <div className="relative h-[300px] md:h-[260px] lg:h-[260px] cursor-pointer">
-                <Image
-                  src={"/projects/applix.png"}
-                  className="rounded-lg"
-                  layout="fill"
-                  objectFit="cover"
-                />
+            <div className="p-6 bg-secondary-1/10 dark:bg-secondary-7 rounded">
+              <div className="relative flex flex-col gap-4 rounded transition">
+                <div className="relative h-[300px] md:h-[300px] lg:h-[276px] cursor-pointer">
+                  <Image
+                    src={"/projects/applix.png"}
+                    className="rounded overflow-hidden h-full"
+                    layout="fill"
+                    // objectFit="contain"
+                  />
+                </div>
+                <div className="flex flex-col space-y-4">
+                  <h6 className="text-secondary-7/90 dark:text-primary-2/90 text-base font-bold cursor-pointer">
+                    Applix Website
+                  </h6>
+                  <p className="text-sm text-secondary-7/80 dark:text-primary-2/80">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Cras iaculis diam varius diam ultricies lacinia.
+                  </p>
+                  <div className="flex space-x-2">
+                    <div className="px-3 py-1.5 rounded-lg flex justify-center bg-secondary-3">
+                      <h6 className="text-secondary-1 text-xs font-medium">
+                        Php
+                      </h6>
+                    </div>
+                    <div className="px-3 py-1.5 rounded-lg flex justify-center bg-secondary-3">
+                      <h6 className="text-secondary-1 text-xs font-medium">
+                        Composer
+                      </h6>
+                    </div>
+                    <div className="px-3 py-1.5 rounded-lg flex justify-center bg-secondary-3">
+                      <h6 className="text-secondary-1 text-xs font-medium">
+                        Bootstrap
+                      </h6>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="flex flex-col space-y-4">
-                <h6 className="text-secondary-7/90 dark:text-primary-2/90 text-base font-bold cursor-pointer">
-                  Applix Website
-                </h6>
-                <p className="text-sm text-secondary-7/80 dark:text-primary-2/80">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-                  iaculis diam varius diam ultricies lacinia.
-                </p>
-                <div className="flex space-x-2">
-                  <div className="px-3 py-1.5 rounded-lg flex justify-center bg-secondary-3">
-                    <h6 className="text-secondary-1 text-xs font-medium">
-                      Php
-                    </h6>
-                  </div>
-                  <div className="px-3 py-1.5 rounded-lg flex justify-center bg-secondary-3">
-                    <h6 className="text-secondary-1 text-xs font-medium">
-                      Composer
-                    </h6>
-                  </div>
-                  <div className="px-3 py-1.5 rounded-lg flex justify-center bg-secondary-3">
-                    <h6 className="text-secondary-1 text-xs font-medium">
-                      Bootstrap
-                    </h6>
+            </div>
+            <div className="p-6 bg-secondary-1/10 dark:bg-secondary-7 rounded">
+              <div className="relative flex flex-col gap-4 rounded transition">
+                <div className="relative h-[300px] md:h-[300px] lg:h-[276px] cursor-pointer">
+                  <Image
+                    src={"/projects/guavahire.png"}
+                    className="rounded overflow-hidden h-full"
+                    layout="fill"
+                    // objectFit="contain"
+                  />
+                </div>
+                <div className="flex flex-col space-y-4">
+                  <h6 className="text-secondary-7/90 dark:text-primary-2/90 text-base font-bold cursor-pointer">
+                    Guavahire
+                  </h6>
+                  <p className="text-sm text-secondary-7/80 dark:text-primary-2/80">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Cras iaculis diam varius diam ultricies lacinia.
+                  </p>
+                  <div className="flex space-x-2">
+                    <div className="px-3 py-1.5 rounded-lg flex justify-center bg-secondary-3">
+                      <h6 className="text-secondary-1 text-xs font-medium">
+                        Php
+                      </h6>
+                    </div>
+                    <div className="px-3 py-1.5 rounded-lg flex justify-center bg-secondary-3">
+                      <h6 className="text-secondary-1 text-xs font-medium">
+                        Composer
+                      </h6>
+                    </div>
+                    <div className="px-3 py-1.5 rounded-lg flex justify-center bg-secondary-3">
+                      <h6 className="text-secondary-1 text-xs font-medium">
+                        Bootstrap
+                      </h6>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -495,17 +543,19 @@ const Home: NextPage = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-12 gap-x-8 gap-y-10">
             <div className="relative flex flex-col gap-4 rounded-lg transition">
-              <div className="relative h-[300px] md:h-[260px] lg:h-[220px] cursor-pointer">
+              <div className="relative h-[300px] md:h-[260px] lg:h-[220px] cursor-pointer border border-primary-5/10 rounded-lg">
                 <Image
-                  src={"/projects/applix.png"}
-                  className="rounded-lg"
+                  src={
+                    "/articles/step_by_step_to_create_microservices_in_nestjs.png"
+                  }
+                  className="rounded-lg overflow-hidden h-full"
                   layout="fill"
-                  objectFit="cover"
                 />
               </div>
               <div className="flex flex-col space-y-4">
                 <h6 className="text-secondary-7/90 dark:text-primary-2/90 text-base font-bold cursor-pointer">
-                  Applix Website
+                  A Step-by-Step Tutorial on Creating a NestJS RabbitMQ
+                  Microservice
                 </h6>
                 <p className="text-sm text-secondary-7/80 dark:text-primary-2/80">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras

@@ -38,7 +38,6 @@ section {
     ul {
       list-style-type: circle;
       li {
-        line-height: 28px;
         color: #000;
         font-size: 14px;
       }
@@ -47,15 +46,15 @@ section {
       position: relative;
       bottom: 12%;
       img {
-        height: 160px;
-        width: 205px;
+        height: 230px;
+        width: 275px;
       }
       .mockup-content {
         position: absolute;
-        top: 5%;
-        left: 3.2%;
-        width: 187px;
-        height: 102px;
+        top: 5.5%;
+        left: 2.9%;
+        width: 251px;
+        height: 145px;
       }
     }
     .macbook {
@@ -63,8 +62,15 @@ section {
       bottom: 5%;
       right: 1%;
       img {
-        height: 90px;
-        width: 150px;
+        height: 135px;
+        width: 225px;
+      }
+      .mockup-content {
+        position: absolute;
+        top: 5%;
+        right: 12%;
+        width: 171px;
+        height: 110px;
       }
     }
   }
