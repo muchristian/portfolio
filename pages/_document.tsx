@@ -8,7 +8,7 @@ class MyDocument extends Document {
     return (
       <Html lang={AppConfig.locale} className="dark">
         <Head />
-        <body className="font-mont font-normal text-primary-2/80">
+        <body className="font-[Roboto] font-normal text-primary-2/80">
           <Main />
           <NextScript />
         </body>
