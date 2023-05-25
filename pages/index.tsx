@@ -12,6 +12,15 @@ import React, {
 } from "react";
 import Image from "next/image";
 import { Banner } from "../components/banner/banner";
+import { render } from "@react-email/render";
+import { EmailTemplate } from "../components/EmailTemplate";
+
+type initValue = {
+  name: string;
+  phone: string;
+  email: string;
+  message: string;
+};
 
 const Home: NextPage = () => {
   const navContainer = useRef() as LegacyRef<HTMLUListElement> | any;
@@ -19,6 +28,12 @@ const Home: NextPage = () => {
   const sects = sectionContainer?.current?.childNodes;
   const navs = navContainer?.current?.childNodes;
   const [themeType, setThemeType] = useState<string>("");
+  const [values, setValues] = useState<initValue>({
+    name: "",
+    phone: "",
+    email: "",
+    message: "",
+  });
   const frontend = [
     { id: 1, name: "Tailwind" },
     { id: 2, name: "TypeScript" },
@@ -139,6 +154,40 @@ const Home: NextPage = () => {
 
   const downloadCV = () => {
     window.open("/Mucyo-Christian-Resume.pdf", "_blank");
+  };
+
+  const handleOnChange = (event: any) => {
+    console.log(event);
+    const target = event.target;
+    console.log(target);
+    const obj = { ...values, [target.name]: target.value };
+    setValues(obj);
+  };
+
+  const handleSubmit = async (event: any) => {
+    event.preventDefault();
+    const msg = {
+      to: "mucyochristian2@gmail.com",
+      from: "muchris.dev@gmail.com",
+      subject: `Email from ${values.email}`,
+      text: ``,
+      html: render(
+        <EmailTemplate message={values.message} phone={values.phone} />
+      ),
+    };
+    const res = await fetch("/api/sendgrid", {
+      body: JSON.stringify(values),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+    });
+
+    const { error } = await res.json();
+    if (error) {
+      console.log(error);
+      return;
+    }
   };
   return (
     <>
@@ -712,7 +761,10 @@ const Home: NextPage = () => {
               </div>
             </div>
 
-            <form className="flex flex-col w-12/12 md:w-8/12 px-2 mt-12">
+            <form
+              className="flex flex-col w-12/12 md:w-8/12 px-2 mt-12"
+              onSubmit={handleSubmit}
+            >
               <div className="flex gap-6">
                 <div className="flex-1 mb-6">
                   <label
@@ -722,11 +774,14 @@ const Home: NextPage = () => {
                     Name
                   </label>
                   <input
-                    type="email"
-                    id="email"
-                    className="h-[42px] outline-0 focus:outline-none focus:border focus:border-secondary-1 bg-secondary-1/10 dark:bg-secondary-7 text-gray-900 text-sm rounded block w-full p-2.5 transition duration-150 ease-in-out"
+                    type="text"
+                    id="name"
+                    name="name"
+                    className="h-[42px] outline-0 focus:outline-none focus:border focus:border-secondary-1 bg-secondary-1/10 dark:bg-secondary-7 text-gray-900 text-sm text-secondary-7/80 dark:text-primary-2/80 rounded block w-full p-2.5 transition duration-150 ease-in-out"
                     placeholder="Enter your name"
                     required
+                    value={values.name}
+                    onChange={handleOnChange}
                   />
                 </div>
                 <div className="flex-1 mb-6">
@@ -737,11 +792,13 @@ const Home: NextPage = () => {
                     Phone #optional
                   </label>
                   <input
-                    type="email"
-                    id="email"
-                    className="h-[42px] outline-0 focus:outline-none focus:border focus:border-secondary-1 bg-secondary-1/10 dark:bg-secondary-7 text-gray-900 text-sm rounded block w-full p-2.5 transition duration-150 ease-in-out"
+                    type="text"
+                    id="phone"
+                    name="phone"
+                    className="h-[42px] outline-0 focus:outline-none focus:border focus:border-secondary-1 bg-secondary-1/10 dark:bg-secondary-7 text-gray-900 text-sm text-secondary-7/80 dark:text-primary-2/80 rounded block w-full p-2.5 transition duration-150 ease-in-out"
                     placeholder="Enter your phone"
-                    required
+                    value={values.phone}
+                    onChange={handleOnChange}
                   />
                 </div>
               </div>
@@ -756,9 +813,12 @@ const Home: NextPage = () => {
                   <input
                     type="email"
                     id="email"
-                    className="h-[42px] outline-0 focus:outline-none focus:border focus:border-secondary-1 bg-secondary-1/10 dark:bg-secondary-7 text-gray-900 text-sm rounded block w-full p-2.5 transition duration-150 ease-in-out"
+                    name="email"
+                    className="h-[42px] outline-0 focus:outline-none focus:border focus:border-secondary-1 bg-secondary-1/10 dark:bg-secondary-7 text-gray-900 text-sm text-secondary-7/80 dark:text-primary-2/80 rounded block w-full p-2.5 transition duration-150 ease-in-out"
                     placeholder="Enter your Email"
                     required
+                    value={values.email}
+                    onChange={handleOnChange}
                   />
                 </div>
               </div>
@@ -772,13 +832,33 @@ const Home: NextPage = () => {
                   </label>
                   <textarea
                     id="message"
+                    name="message"
                     rows={4}
-                    className="outline-0 focus:outline-none focus:border focus:border-secondary-1 bg-secondary-1/10 dark:bg-secondary-7 text-gray-900 text-sm rounded block w-full p-2.5 transition duration-150 ease-in-out"
+                    className="outline-0 focus:outline-none focus:border focus:border-secondary-1 bg-secondary-1/10 dark:bg-secondary-7 text-gray-900 text-sm text-secondary-7/80 dark:text-primary-2/80 rounded block w-full p-2.5 transition duration-150 ease-in-out"
                     placeholder="Leave a message..."
+                    required
+                    value={values.message}
+                    onChange={handleOnChange}
                   ></textarea>
                 </div>
               </div>
+              <Button
+                type="submit"
+                classes="mt-6 w-[180px] self-center px-6 py-4 !rounded-3xl bg-secondary-7 dark:bg-secondary-1/80 gap-4 text-primary-2 hover:text-secondary-1 dark:hover:text-secondary-7"
+              >
+                <span>Submit</span>
+              </Button>
             </form>
+          </div>
+        </section>
+        <section
+          className="footer py-4 bg-secondary-8 dark:bg-secondary-7"
+          id="footer"
+        >
+          <div className="container max-w-[1176px] flex flex-col items-center">
+            <h6 className="text-sm text-secondary-7/80 dark:text-primary-2/80">
+              Built By Chris &copy; 2023
+            </h6>
           </div>
         </section>
       </main>
