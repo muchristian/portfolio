@@ -157,9 +157,7 @@ const Home: NextPage = () => {
   };
 
   const handleOnChange = (event: any) => {
-    console.log(event);
     const target = event.target;
-    console.log(target);
     const obj = { ...values, [target.name]: target.value };
     setValues(obj);
   };

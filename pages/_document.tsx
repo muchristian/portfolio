@@ -7,7 +7,7 @@ import SplashScreen from "./SplashScreen";
 class MyDocument extends Document {
   render() {
     return (
-      <Html lang={AppConfig.locale} className="dark bg-secondary-7">
+      <Html lang={AppConfig.locale} className="dark">
         <Head />
         <body className="font-[Roboto] font-normal text-primary-2/80">
           <Main />
