@@ -555,7 +555,7 @@ const Home: NextPage = () => {
                     />
                   </div>
                   <div className="flex flex-col space-y-4">
-                    <Link href="https://github.com/muchristian/Custom-POS-System">
+                    <Link href="https://github.com/muchristian/inv-ms">
                       <a
                         target="_blank"
                         className="text-secondary-7/90 dark:text-primary-2/90 text-base font-bold cursor-pointer"
