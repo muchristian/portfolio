@@ -267,7 +267,7 @@ const Home: NextPage = () => {
                 Software Engineer
               </h2> */}
                 <p className="text-secondary-7/80 dark:text-primary-2/80">
-                  Seasoned
+                  A seasoned
                   <span className="text-secondary-1">
                     software engineer
                   </span>{" "}
