@@ -267,10 +267,8 @@ const Home: NextPage = () => {
                 Software Engineer
               </h2> */}
                 <p className="text-secondary-7/80 dark:text-primary-2/80">
-                  A seasoned
-                  <span className="text-secondary-1">
-                    software engineer
-                  </span>{" "}
+                  A seasoned{" "}
+                  <span className="text-secondary-1">software engineer</span>{" "}
                   with 4+ years of expertise delivering{" "}
                   <span className="text-secondary-1">user-oriented</span>{" "}
                   backend APIs and seamless front-end applications that drive
