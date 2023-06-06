@@ -28,7 +28,37 @@ section {
       color: #f4b060;
     }
   }
+  nav.toggle {
+    height: 512px;
+    ul {
+      opacity: 1;
+    }
+  }
 }
+
+@media (max-width: 1024px) {
+  .navbar {
+    nav {
+      height: 0;
+      position: absolute;
+      top: 4.5rem;
+      left: 0;
+      right: 0;
+      transition: 0.3s;
+      overflow: hidden;
+      ul {
+        padding-top: 64px;
+        padding-bottom: 64px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        transition: 0.3s;
+        opacity: 0;
+      }
+    }
+  }
+}
+
 .home {
   position: relative;
   width: 100%;

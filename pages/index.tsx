@@ -28,6 +28,7 @@ const Home: NextPage = () => {
   const sects = sectionContainer?.current?.childNodes;
   const navs = navContainer?.current?.childNodes;
   const [themeType, setThemeType] = useState<string>("");
+  const [toggleMenu, setToggleMenu] = useState<boolean>(false);
   const [values, setValues] = useState<initValue>({
     name: "",
     phone: "",
@@ -187,54 +188,68 @@ const Home: NextPage = () => {
       return;
     }
   };
+
+  const toggleMenuHandler = () => {
+    setToggleMenu(!toggleMenu);
+  };
   return (
     <>
-      <Navbar classes="sticky top-0 h-[4.5rem] z-20 bg-secondary-8 dark:bg-secondary-7">
+      <Navbar classes="sticky top-0 h-[4.5rem] z-20 bg-secondary-9 dark:bg-secondary-7">
         <div className="container flex justify-between items-center h-full max-w-7xl px-6">
           <h1 className="text-secondary-7/90 dark:text-primary-2/90">CHRIS</h1>
-          <ul className="hidden lg:flex items-center gap-16" ref={navContainer}>
-            <li className="about">
-              <a
-                onClick={() => handleScrollToSection("about")}
-                className="text-secondary-7/90 dark:text-primary-2/90 hover:text-secondary-1 hover:dark:text-secondary-1 transition duration-[150] ease-in-out cursor-pointer"
-              >
-                About
-              </a>
-            </li>
-            <li className="portfolio">
-              <a
-                onClick={() => handleScrollToSection("portfolio")}
-                className="text-secondary-7/90 dark:text-primary-2/90 hover:text-secondary-1 hover:dark:text-secondary-1 transition duration-[150] ease-in-out cursor-pointer"
-              >
-                Portfolio
-              </a>
-            </li>
-            <li className="blog">
-              <a
-                onClick={() => handleScrollToSection("blog")}
-                className="text-secondary-7/90 dark:text-primary-2/90 hover:text-secondary-1 hover:dark:text-secondary-1 transition duration-[150] ease-in-out cursor-pointer"
-              >
-                Blog
-              </a>
-            </li>
-            <li className="contact">
-              <a
-                onClick={() => handleScrollToSection("contact")}
-                className="text-secondary-7/90 dark:text-primary-2/90 hover:text-secondary-1 hover:dark:text-secondary-1 transition duration-[150] ease-in-out cursor-pointer"
-              >
-                Contact
-              </a>
-            </li>
-            <li className="flex flex-col justify-center">
-              <button className="" onClick={themeSwitch}>
-                {themeIcon(themeType)}
-              </button>
-            </li>
-          </ul>
+          <nav
+            className={`${
+              toggleMenu ? "toggle" : ""
+            } bg-secondary-9 dark:bg-secondary-7`}
+          >
+            <ul
+              className="flex lg:flex-row items-center gap-16"
+              ref={navContainer}
+            >
+              <li className="about">
+                <a
+                  onClick={() => handleScrollToSection("about")}
+                  className="text-secondary-7/90 dark:text-primary-2/90 hover:text-secondary-1 hover:dark:text-secondary-1 transition duration-[150] ease-in-out cursor-pointer"
+                >
+                  About
+                </a>
+              </li>
+              <li className="portfolio">
+                <a
+                  onClick={() => handleScrollToSection("portfolio")}
+                  className="text-secondary-7/90 dark:text-primary-2/90 hover:text-secondary-1 hover:dark:text-secondary-1 transition duration-[150] ease-in-out cursor-pointer"
+                >
+                  Portfolio
+                </a>
+              </li>
+              <li className="blog">
+                <a
+                  onClick={() => handleScrollToSection("blog")}
+                  className="text-secondary-7/90 dark:text-primary-2/90 hover:text-secondary-1 hover:dark:text-secondary-1 transition duration-[150] ease-in-out cursor-pointer"
+                >
+                  Blog
+                </a>
+              </li>
+              <li className="contact">
+                <a
+                  onClick={() => handleScrollToSection("contact")}
+                  className="text-secondary-7/90 dark:text-primary-2/90 hover:text-secondary-1 hover:dark:text-secondary-1 transition duration-[150] ease-in-out cursor-pointer"
+                >
+                  Contact
+                </a>
+              </li>
+              <li className="flex flex-col justify-center">
+                <button className="" onClick={themeSwitch}>
+                  {themeIcon(themeType)}
+                </button>
+              </li>
+            </ul>
+          </nav>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="ionicon lg:hidden w-[48px] h-[48px] text-secondary-7/90 dark:text-primary-2/90"
             viewBox="0 0 512 512"
+            onClick={() => toggleMenuHandler()}
           >
             <path
               fill="none"
@@ -247,8 +262,7 @@ const Home: NextPage = () => {
           </svg>
         </div>
       </Navbar>
-
-      <Meta title="Home Page" />
+      <Meta title={"mucyo chris"} />
       <main ref={sectionContainer}>
         <section className="home bg-secondary-8 dark:bg-secondary-7" id="about">
           <div className="container max-w-[1176px] px-6 h-full flex items-center gap-2">
@@ -489,7 +503,7 @@ const Home: NextPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 mt-12 gap-x-8 gap-y-10">
               <div className="p-6 bg-secondary-1/10 dark:bg-secondary-7 rounded">
                 <div className="relative flex flex-col gap-4 rounded transition">
-                  <div className="relative h-[300px] md:h-[300px] lg:h-[276px] cursor-pointer">
+                  <div className="relative h-[200px] sm:h-[254px] md:h-[232px] lg:h-[276px] cursor-pointer">
                     <Image
                       src={"/projects/wtrack.png"}
                       className="rounded overflow-hidden h-full"
@@ -546,7 +560,7 @@ const Home: NextPage = () => {
               </div>
               <div className="p-6 bg-secondary-1/10 dark:bg-secondary-7 rounded">
                 <div className="relative flex flex-col gap-4 rounded transition">
-                  <div className="relative h-[300px] md:h-[300px] lg:h-[276px] cursor-pointer">
+                  <div className="relative h-[200px] sm:h-[254px] md:h-[232px] lg:h-[276px] cursor-pointer">
                     <Image
                       src={"/projects/custom_pos.png"}
                       className="rounded overflow-hidden h-full"
@@ -604,7 +618,7 @@ const Home: NextPage = () => {
               </div>
               <div className="p-6 bg-secondary-1/10 dark:bg-secondary-7 rounded">
                 <div className="relative flex flex-col gap-4 rounded transition">
-                  <div className="relative h-[300px] md:h-[300px] lg:h-[276px] cursor-pointer">
+                  <div className="relative h-[200px] sm:h-[254px] md:h-[232px] lg:h-[276px] cursor-pointer">
                     <Image
                       src={"/projects/applix.png"}
                       className="rounded overflow-hidden h-full"
@@ -645,7 +659,7 @@ const Home: NextPage = () => {
               </div>
               <div className="p-6 bg-secondary-1/10 dark:bg-secondary-7 rounded">
                 <div className="relative flex flex-col gap-4 rounded transition">
-                  <div className="relative h-[300px] md:h-[300px] lg:h-[276px] cursor-pointer">
+                  <div className="relative h-[200px] sm:h-[254px] md:h-[232px] lg:h-[276px] cursor-pointer">
                     <Image
                       src={"/projects/guavahire.png"}
                       className="rounded overflow-hidden h-full"

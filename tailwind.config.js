@@ -40,6 +40,7 @@ module.exports = {
         6: "#F8FDF8",
         7: "#0e0f10",
         8: "#f4b06014",
+        9: "#fff9f2",
       },
     },
     extend: {

@@ -1,4 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
+import { Meta } from "../layouts/Meta";
 
 import { AppConfig } from "../utils/AppConfig";
 import SplashScreen from "./SplashScreen";
@@ -9,6 +10,7 @@ class MyDocument extends Document {
     return (
       <Html lang={AppConfig.locale} className="dark">
         <Head />
+
         <body className="font-[Roboto] font-normal text-primary-2/80">
           <Main />
           <NextScript />
