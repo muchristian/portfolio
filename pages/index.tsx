@@ -107,10 +107,8 @@ const Home: NextPage = () => {
   };
 
   useEffect(() => {
-    localStorage.setItem("userTheme", "dark");
     themeCheck();
     const body = document.querySelector("body");
-    const sections = body?.getElementsByTagName("section");
 
     window.addEventListener("scroll", handleActiveSection);
   }, []);
@@ -195,10 +193,10 @@ const Home: NextPage = () => {
   return (
     <>
       <Navbar classes="sticky top-0 h-[4.5rem] z-20 bg-secondary-9 dark:bg-secondary-7">
-        <div className="container flex justify-between items-center h-full max-w-7xl px-6">
+        <div className="container flex justify-between items-center h-full max-w-[1536px] px-6">
           <h1 className="text-secondary-7/90 dark:text-primary-2/90">CHRIS</h1>
           <nav
-            className={`${
+            className={`lg:w-[1280px] lg:px-6 lg:flex lg:justify-end ${
               toggleMenu ? "toggle" : ""
             } bg-secondary-9 dark:bg-secondary-7`}
           >
@@ -238,13 +236,13 @@ const Home: NextPage = () => {
                   Contact
                 </a>
               </li>
-              <li className="flex flex-col justify-center">
-                <button className="" onClick={themeSwitch}>
-                  {themeIcon(themeType)}
-                </button>
-              </li>
             </ul>
           </nav>
+          <div className="flex flex-col justify-center">
+            <button className="" onClick={themeSwitch}>
+              {themeIcon(themeType)}
+            </button>
+          </div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="ionicon lg:hidden w-[48px] h-[48px] text-secondary-7/90 dark:text-primary-2/90"
@@ -265,7 +263,7 @@ const Home: NextPage = () => {
       <Meta title={"mucyo chris"} />
       <main ref={sectionContainer}>
         <section className="home bg-secondary-8 dark:bg-secondary-7" id="about">
-          <div className="container max-w-[1176px] px-6 h-full flex items-center gap-2">
+          <div className="container max-w-[1280px] px-6 h-full flex items-center gap-2">
             <div className="basis-10/12 lg:basis-8/12">
               <div className="flex flex-col space-y-8">
                 <h6 className="greeting text-sm font-medium">
@@ -277,16 +275,11 @@ const Home: NextPage = () => {
                 <h1 className="name text-secondary-7 dark:text-primary-2 text-6xl font-semibold">
                   Mucyo Christian
                 </h1>
-                {/* <h2 className="title text-secondary-3 text-4xl font-semibold">
-                Software Engineer
-              </h2> */}
                 <p className="text-secondary-7/80 dark:text-primary-2/80">
-                  A seasoned{" "}
-                  <span className="text-secondary-1">software engineer</span>{" "}
-                  with 4+ years of expertise delivering{" "}
-                  <span className="text-secondary-1">user-oriented</span>{" "}
-                  backend APIs and seamless front-end applications that drive
-                  the overall success of the product.
+                  A seasoned software engineer with 4 years of experience,
+                  specialized in delivering and maintaining websites and full
+                  stack solutions of all levels of complexity, that drives the
+                  overall success of the product.
                 </p>
                 <Button
                   onClick={downloadCV}
@@ -369,7 +362,7 @@ const Home: NextPage = () => {
           </div>
         </section>
         <section className="skills pt-0 pb-16 bg-secondary-8 dark:bg-secondary-7">
-          <div className="container max-w-[1176px] px-6 grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="container max-w-[1280px] px-6 grid sm:grid-cols-2 md:grid-cols-4 gap-6">
             <div className="flex flex-col gap-6">
               <div className="">
                 <h6 className="font-bold text-secondary-7/90 dark:text-primary-2/90">
@@ -488,27 +481,31 @@ const Home: NextPage = () => {
           className="portfolio py-16 bg-primary-2 dark:bg-primary-3"
           id="portfolio"
         >
-          <div className="container max-w-[1176px] px-6 flex flex-col opacity-90">
+          <div className="container max-w-[1280px] px-6 flex flex-col opacity-90">
             <div className="sm:w-8/12 md:w-7/12 lg:w-6/12 self-center">
               <div className="flex flex-col gap-8 text-center">
                 <h3 className="text-secondary-7 dark:text-primary-2 text-5xl font-bold">
                   My <span className="text-secondary-1">Work</span>
                 </h3>
                 <p className="text-sm text-secondary-7/80 dark:text-primary-2/80">
-                  Take a look at some of the job, freelance, and side projects I
-                  have completed, which demonstrate my technical expertise.{" "}
+                  Take a look at some of the job, freelance, and side projects,
+                  I have worked on, which demonstrate my technical expertise.{" "}
                 </p>
               </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 mt-12 gap-x-8 gap-y-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-12 gap-x-8 gap-y-10">
               <div className="p-6 bg-secondary-1/10 dark:bg-secondary-7 rounded">
                 <div className="relative flex flex-col gap-4 rounded transition">
-                  <div className="relative h-[200px] sm:h-[254px] md:h-[232px] lg:h-[276px] cursor-pointer">
-                    <Image
-                      src={"/projects/wtrack.png"}
-                      className="rounded overflow-hidden h-full"
-                      layout="fill"
-                    />
+                  <div className="relative h-[280px] md:h-[240px] lg:h-[200px] cursor-pointer">
+                    <Link href="https://github.com/muchristian/WealthTrack-Frontend">
+                      <a target="_blank" className="cursor-pointer">
+                        <Image
+                          src={"/projects/wtrack.png"}
+                          className="rounded overflow-hidden h-full"
+                          layout="fill"
+                        />
+                      </a>
+                    </Link>
                   </div>
                   <div className="flex flex-col space-y-4">
                     <Link href="https://github.com/muchristian/WealthTrack-Frontend">
@@ -560,12 +557,16 @@ const Home: NextPage = () => {
               </div>
               <div className="p-6 bg-secondary-1/10 dark:bg-secondary-7 rounded">
                 <div className="relative flex flex-col gap-4 rounded transition">
-                  <div className="relative h-[200px] sm:h-[254px] md:h-[232px] lg:h-[276px] cursor-pointer">
-                    <Image
-                      src={"/projects/custom_pos.png"}
-                      className="rounded overflow-hidden h-full"
-                      layout="fill"
-                    />
+                  <div className="relative h-[280px] md:h-[240px] lg:h-[200px] cursor-pointer">
+                    <Link href="https://github.com/muchristian/inv-ms">
+                      <a target="_blank" className="cursor-pointer">
+                        <Image
+                          src={"/projects/custom_pos.png"}
+                          className="rounded overflow-hidden h-full"
+                          layout="fill"
+                        />
+                      </a>
+                    </Link>
                   </div>
                   <div className="flex flex-col space-y-4">
                     <Link href="https://github.com/muchristian/inv-ms">
@@ -618,12 +619,16 @@ const Home: NextPage = () => {
               </div>
               <div className="p-6 bg-secondary-1/10 dark:bg-secondary-7 rounded">
                 <div className="relative flex flex-col gap-4 rounded transition">
-                  <div className="relative h-[200px] sm:h-[254px] md:h-[232px] lg:h-[276px] cursor-pointer">
-                    <Image
-                      src={"/projects/applix.png"}
-                      className="rounded overflow-hidden h-full"
-                      layout="fill"
-                    />
+                  <div className="relative h-[280px] md:h-[240px] lg:h-[200px] cursor-pointer">
+                    <Link href="https://applix.africa">
+                      <a target="_blank" className="cursor-pointer">
+                        <Image
+                          src={"/projects/applix.png"}
+                          className="rounded overflow-hidden h-full"
+                          layout="fill"
+                        />
+                      </a>
+                    </Link>
                   </div>
                   <div className="flex flex-col space-y-4">
                     <Link href="https://applix.africa">
@@ -659,12 +664,16 @@ const Home: NextPage = () => {
               </div>
               <div className="p-6 bg-secondary-1/10 dark:bg-secondary-7 rounded">
                 <div className="relative flex flex-col gap-4 rounded transition">
-                  <div className="relative h-[200px] sm:h-[254px] md:h-[232px] lg:h-[276px] cursor-pointer">
-                    <Image
-                      src={"/projects/guavahire.png"}
-                      className="rounded overflow-hidden h-full"
-                      layout="fill"
-                    />
+                  <div className="relative h-[280px] md:h-[240px] lg:h-[200px] cursor-pointer">
+                    <Link href="https://guavahire.com/">
+                      <a target="_blank" className="cursor-pointer">
+                        <Image
+                          src={"/projects/guavahire.png"}
+                          className="rounded overflow-hidden h-full"
+                          layout="fill"
+                        />
+                      </a>
+                    </Link>
                   </div>
                   <div className="flex flex-col space-y-4">
                     <Link href="https://guavahire.com/">
@@ -706,7 +715,7 @@ const Home: NextPage = () => {
           className="blog py-16 bg-secondary-8 dark:bg-secondary-7"
           id="blog"
         >
-          <div className="container max-w-[1176px] px-6 flex flex-col">
+          <div className="container max-w-[1280px] px-6 flex flex-col">
             <div className="sm:w-8/12 md:w-7/12 lg:w-6/12 self-center">
               <div className="flex flex-col gap-8 text-center">
                 <h3 className="text-secondary-7 dark:text-primary-2 text-5xl font-bold">
@@ -719,20 +728,29 @@ const Home: NextPage = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-12 gap-x-8 gap-y-10">
               <div className="relative flex flex-col gap-4 rounded-lg transition">
-                <div className="relative h-[300px] md:h-[260px] lg:h-[220px] cursor-pointer border border-primary-5/10 rounded-lg">
-                  <Image
-                    src={
-                      "/articles/step_by_step_to_create_microservices_in_nestjs.png"
-                    }
-                    className="rounded-lg overflow-hidden h-full"
-                    layout="fill"
-                  />
+                <div className="relative h-[280px] md:h-[240px] lg:h-[200px] cursor-pointer border border-primary-5/10 rounded-lg">
+                  <Link href="https://medium.com/@mucyochristian2/a-step-by-step-tutorial-on-creating-a-nestjs-rabbitmq-microservice-2621748255d1">
+                    <a target="_blank" className="cursor-pointer">
+                      <Image
+                        src={
+                          "/articles/step_by_step_to_create_microservices_in_nestjs.png"
+                        }
+                        className="rounded-lg overflow-hidden h-full"
+                        layout="fill"
+                      />
+                    </a>
+                  </Link>
                 </div>
                 <div className="flex flex-col space-y-4">
-                  <h6 className="text-secondary-7/90 dark:text-primary-2/90 text-base font-bold cursor-pointer">
-                    A Step-by-Step Tutorial on Creating a NestJS RabbitMQ
-                    Microservice
-                  </h6>
+                  <Link href="https://medium.com/@mucyochristian2/a-step-by-step-tutorial-on-creating-a-nestjs-rabbitmq-microservice-2621748255d1">
+                    <a
+                      target="_blank"
+                      className="text-secondary-7/90 dark:text-primary-2/90 text-base font-bold cursor-pointer"
+                    >
+                      A Step-by-Step Tutorial on Creating a NestJS RabbitMQ
+                      Microservice
+                    </a>
+                  </Link>
                   <p className="text-sm text-secondary-7/80 dark:text-primary-2/80">
                     I explain comprehensively RabbitMQ, covering its operation
                     and configuration. Additionally, I explored the concept of
@@ -866,7 +884,7 @@ const Home: NextPage = () => {
           className="footer py-4 bg-secondary-8 dark:bg-secondary-7"
           id="footer"
         >
-          <div className="container max-w-[1176px] flex flex-col items-center">
+          <div className="container max-w-[1280px] flex flex-col items-center">
             <h6 className="text-sm text-secondary-7/80 dark:text-primary-2/80">
               Built By Chris &copy; 2023
             </h6>
