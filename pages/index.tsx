@@ -276,7 +276,7 @@ const Home: NextPage = () => {
                   Mucyo Christian
                 </h1>
                 <p className="text-secondary-7/80 dark:text-primary-2/80">
-                  A seasoned software engineer with 4 years of experience,
+                  A seasoned software engineer with over 4 years of experience,
                   specialized in delivering and maintaining websites and full
                   stack solutions of all levels of complexity, that drives the
                   overall success of the product.
