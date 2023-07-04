@@ -666,6 +666,53 @@ const Home: NextPage = () => {
               <div className="p-6 bg-secondary-1/10 dark:bg-secondary-7 rounded">
                 <div className="relative flex flex-col gap-4 rounded transition">
                   <div className="relative h-[280px] md:h-[240px] lg:h-[200px] cursor-pointer">
+                    <Link href="https://www.churchoffaithinrwanda.org/">
+                      <a target="_blank" className="cursor-pointer">
+                        <Image
+                          src={"/projects/churchoffaith.png"}
+                          className="rounded overflow-hidden h-full"
+                          layout="fill"
+                        />
+                      </a>
+                    </Link>
+                  </div>
+
+                  <div className="flex flex-col space-y-4">
+                    <Link href="https://www.churchoffaithinrwanda.org/">
+                      <a
+                        target="_blank"
+                        className="text-secondary-7/90 dark:text-primary-2/90 text-base font-bold cursor-pointer"
+                      >
+                        Church Of Faith In Rwanda
+                      </a>
+                    </Link>
+                    <p className="text-sm text-secondary-7/80 dark:text-primary-2/80">
+                      A website for a church based in Rwanda, for publishing
+                      their current news, and any church activity.
+                    </p>
+                    <div className="flex space-x-2 overflow-x-hidden">
+                      <div className="px-3 py-1.5 rounded-lg flex justify-center bg-secondary-1/60 dark:bg-secondary-3">
+                        <h6 className="text-secondary-3 dark:text-secondary-1 text-xs font-medium">
+                          Laravel
+                        </h6>
+                      </div>
+                      <div className="px-3 py-1.5 rounded-lg flex justify-center bg-secondary-1/60 dark:bg-secondary-3">
+                        <h6 className="text-secondary-3 dark:text-secondary-1 text-xs font-medium">
+                          JQuery
+                        </h6>
+                      </div>
+                      <div className="px-3 py-1.5 rounded-lg flex justify-center bg-secondary-1/60 dark:bg-secondary-3">
+                        <h6 className="text-secondary-3 dark:text-secondary-1 text-xs font-medium">
+                          Bootstrap
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="p-6 bg-secondary-1/10 dark:bg-secondary-7 rounded">
+                <div className="relative flex flex-col gap-4 rounded transition">
+                  <div className="relative h-[280px] md:h-[240px] lg:h-[200px] cursor-pointer">
                     <Link href="https://guavahire.com/">
                       <a target="_blank" className="cursor-pointer">
                         <Image
@@ -676,6 +723,7 @@ const Home: NextPage = () => {
                       </a>
                     </Link>
                   </div>
+
                   <div className="flex flex-col space-y-4">
                     <Link href="https://guavahire.com/">
                       <a
