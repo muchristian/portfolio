@@ -152,7 +152,7 @@ const Home: NextPage = () => {
   };
 
   const downloadCV = () => {
-    window.open("/Mucyo-Christian-Resume.pdf", "_blank");
+    window.open("/Christian-Mucyo-CV.pdf", "_blank");
   };
 
   const handleOnChange = (event: any) => {
