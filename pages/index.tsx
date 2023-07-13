@@ -498,7 +498,7 @@ const Home: NextPage = () => {
               <div className="p-6 bg-secondary-1/10 dark:bg-secondary-7 rounded">
                 <div className="relative flex flex-col gap-4 rounded transition">
                   <div className="relative h-[280px] md:h-[240px] lg:h-[200px] cursor-pointer">
-                    <Link href="https://github.com/muchristian/inv-ms">
+                    <Link href="https://custom-pos-system.vercel.app">
                       <a target="_blank" className="cursor-pointer">
                         <Image
                           src={"/projects/custom_pos.png"}
@@ -509,7 +509,7 @@ const Home: NextPage = () => {
                     </Link>
                   </div>
                   <div className="flex flex-col space-y-4">
-                    <Link href="https://github.com/muchristian/inv-ms">
+                    <Link href="https://custom-pos-system.vercel.app">
                       <a
                         target="_blank"
                         className="text-secondary-7/90 dark:text-primary-2/90 text-base font-bold cursor-pointer"
