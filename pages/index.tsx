@@ -498,67 +498,6 @@ const Home: NextPage = () => {
               <div className="p-6 bg-secondary-1/10 dark:bg-secondary-7 rounded">
                 <div className="relative flex flex-col gap-4 rounded transition">
                   <div className="relative h-[280px] md:h-[240px] lg:h-[200px] cursor-pointer">
-                    <Link href="https://github.com/muchristian/WealthTrack-Frontend">
-                      <a target="_blank" className="cursor-pointer">
-                        <Image
-                          src={"/projects/wtrack.png"}
-                          className="rounded overflow-hidden h-full"
-                          layout="fill"
-                        />
-                      </a>
-                    </Link>
-                  </div>
-                  <div className="flex flex-col space-y-4">
-                    <Link href="https://github.com/muchristian/WealthTrack-Frontend">
-                      <a
-                        target="_blank"
-                        className="text-secondary-7/90 dark:text-primary-2/90 text-base font-bold cursor-pointer"
-                      >
-                        WealthTrack
-                      </a>
-                    </Link>
-                    <p className="text-sm text-secondary-7/80 dark:text-primary-2/80">
-                      A web-based application designed to manage personal
-                      expenses and provide insightful analytics.
-                    </p>
-                    <div className="flex space-x-2 overflow-x-hidden">
-                      <div className="px-3 py-1.5 rounded-lg flex justify-center bg-secondary-1/60 dark:bg-secondary-3">
-                        <h6 className="text-secondary-3 dark:text-secondary-1 text-xs font-medium">
-                          NextJS
-                        </h6>
-                      </div>
-                      <div className="px-3 py-1.5 rounded-lg flex justify-center bg-secondary-1/60 dark:bg-secondary-3">
-                        <h6 className="text-secondary-3 dark:text-secondary-1 text-xs font-medium">
-                          Typescript
-                        </h6>
-                      </div>
-                      <div className="px-3 py-1.5 rounded-lg flex justify-center bg-secondary-1/60 dark:bg-secondary-3">
-                        <h6 className="text-secondary-3 dark:text-secondary-1 text-xs font-medium">
-                          Tailwind
-                        </h6>
-                      </div>
-                      <div className="px-3 py-1.5 rounded-lg flex justify-center bg-secondary-1/60 dark:bg-secondary-3">
-                        <h6 className="text-secondary-3 dark:text-secondary-1 text-xs font-medium">
-                          chart.js
-                        </h6>
-                      </div>
-                      <div className="px-3 py-1.5 rounded-lg flex justify-center bg-secondary-1/60 dark:bg-secondary-3">
-                        <h6 className="text-secondary-3 dark:text-secondary-1 text-xs font-medium">
-                          Strapi
-                        </h6>
-                      </div>
-                      <div className="px-3 py-1.5 rounded-lg flex justify-center bg-secondary-1/60 dark:bg-secondary-3">
-                        <h6 className="text-secondary-3 dark:text-secondary-1 text-xs font-medium">
-                          Postgres
-                        </h6>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="p-6 bg-secondary-1/10 dark:bg-secondary-7 rounded">
-                <div className="relative flex flex-col gap-4 rounded transition">
-                  <div className="relative h-[280px] md:h-[240px] lg:h-[200px] cursor-pointer">
                     <Link href="https://github.com/muchristian/inv-ms">
                       <a target="_blank" className="cursor-pointer">
                         <Image
@@ -583,7 +522,7 @@ const Home: NextPage = () => {
                       managers in tracking their business operations and
                       generating income.
                     </p>
-                    <div className="flex space-x-2 overflow-x-hidden">
+                    <div className="flex flex-wrap gap-[8px] overflow-x-hidden">
                       <div className="px-3 py-1.5 rounded-lg flex justify-center bg-secondary-1/60 dark:bg-secondary-3">
                         <h6 className="text-secondary-3 dark:text-secondary-1 text-xs font-medium">
                           Electron
@@ -643,7 +582,7 @@ const Home: NextPage = () => {
                     <p className="text-sm text-secondary-7/80 dark:text-primary-2/80">
                       Software Company Website.
                     </p>
-                    <div className="flex space-x-2 overflow-x-hidden bottom-0">
+                    <div className="flex flex-wrap gap-[8px] overflow-x-hidden bottom-0">
                       <div className="px-3 py-1.5 rounded-lg flex justify-center bg-secondary-1/60 dark:bg-secondary-3">
                         <h6 className="text-secondary-3 dark:text-secondary-1 text-xs font-medium">
                           Php
@@ -690,7 +629,7 @@ const Home: NextPage = () => {
                       A website for a church based in Rwanda, for publishing
                       their current news, and any church activity.
                     </p>
-                    <div className="flex space-x-2 overflow-x-hidden">
+                    <div className="flex flex-wrap gap-[8px] overflow-x-hidden">
                       <div className="px-3 py-1.5 rounded-lg flex justify-center bg-secondary-1/60 dark:bg-secondary-3">
                         <h6 className="text-secondary-3 dark:text-secondary-1 text-xs font-medium">
                           Laravel
@@ -737,7 +676,7 @@ const Home: NextPage = () => {
                       A web-based platform created to connect clients with
                       highly skilled freelancers for job opportunities.
                     </p>
-                    <div className="flex space-x-2 overflow-x-hidden">
+                    <div className="flex flex-wrap gap-[8px] overflow-x-hidden">
                       <div className="px-3 py-1.5 rounded-lg flex justify-center bg-secondary-1/60 dark:bg-secondary-3">
                         <h6 className="text-secondary-3 dark:text-secondary-1 text-xs font-medium">
                           Laravel
@@ -751,6 +690,67 @@ const Home: NextPage = () => {
                       <div className="px-3 py-1.5 rounded-lg flex justify-center bg-secondary-1/60 dark:bg-secondary-3">
                         <h6 className="text-secondary-3 dark:text-secondary-1 text-xs font-medium">
                           Bootstrap
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="p-6 bg-secondary-1/10 dark:bg-secondary-7 rounded">
+                <div className="relative flex flex-col gap-4 rounded transition">
+                  <div className="relative h-[280px] md:h-[240px] lg:h-[200px] cursor-pointer">
+                    <Link href="https://github.com/muchristian/WealthTrack-Frontend">
+                      <a target="_blank" className="cursor-pointer">
+                        <Image
+                          src={"/projects/wtrack.png"}
+                          className="rounded overflow-hidden h-full"
+                          layout="fill"
+                        />
+                      </a>
+                    </Link>
+                  </div>
+                  <div className="flex flex-col space-y-4">
+                    <Link href="https://github.com/muchristian/WealthTrack-Frontend">
+                      <a
+                        target="_blank"
+                        className="text-secondary-7/90 dark:text-primary-2/90 text-base font-bold cursor-pointer"
+                      >
+                        WealthTrack
+                      </a>
+                    </Link>
+                    <p className="text-sm text-secondary-7/80 dark:text-primary-2/80">
+                      A web-based application designed to manage personal
+                      expenses and provide insightful analytics.
+                    </p>
+                    <div className="flex flex-wrap gap-[8px] overflow-x-hidden">
+                      <div className="px-3 py-1.5 rounded-lg flex justify-center bg-secondary-1/60 dark:bg-secondary-3">
+                        <h6 className="text-secondary-3 dark:text-secondary-1 text-xs font-medium">
+                          NextJS
+                        </h6>
+                      </div>
+                      <div className="px-3 py-1.5 rounded-lg flex justify-center bg-secondary-1/60 dark:bg-secondary-3">
+                        <h6 className="text-secondary-3 dark:text-secondary-1 text-xs font-medium">
+                          Typescript
+                        </h6>
+                      </div>
+                      <div className="px-3 py-1.5 rounded-lg flex justify-center bg-secondary-1/60 dark:bg-secondary-3">
+                        <h6 className="text-secondary-3 dark:text-secondary-1 text-xs font-medium">
+                          Tailwind
+                        </h6>
+                      </div>
+                      <div className="px-3 py-1.5 rounded-lg flex justify-center bg-secondary-1/60 dark:bg-secondary-3">
+                        <h6 className="text-secondary-3 dark:text-secondary-1 text-xs font-medium">
+                          chart.js
+                        </h6>
+                      </div>
+                      <div className="px-3 py-1.5 rounded-lg flex justify-center bg-secondary-1/60 dark:bg-secondary-3">
+                        <h6 className="text-secondary-3 dark:text-secondary-1 text-xs font-medium">
+                          Strapi
+                        </h6>
+                      </div>
+                      <div className="px-3 py-1.5 rounded-lg flex justify-center bg-secondary-1/60 dark:bg-secondary-3">
+                        <h6 className="text-secondary-3 dark:text-secondary-1 text-xs font-medium">
+                          Postgres
                         </h6>
                       </div>
                     </div>
