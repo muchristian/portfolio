@@ -519,8 +519,7 @@ const Home: NextPage = () => {
                     </Link>
                     <p className="text-sm text-secondary-7/80 dark:text-primary-2/80">
                       A cross-platform management software developed to assist
-                      managers in tracking their business operations and
-                      generating income.
+                      managers in tracking their stock and sales.
                     </p>
                     <div className="flex flex-wrap gap-[8px] overflow-x-hidden">
                       <div className="px-3 py-1.5 rounded-lg flex justify-center bg-secondary-1/60 dark:bg-secondary-3">
