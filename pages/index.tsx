@@ -35,17 +35,9 @@ const Home: NextPage = () => {
     email: "",
     message: "",
   });
-  const frontend = [
-    { id: 1, name: "Tailwind" },
-    { id: 2, name: "TypeScript" },
-    { id: 3, name: "React(Next)" },
-    { id: 4, name: "React Native" },
-  ];
   const backend = [
+    { id: 2, name: "Java - Springboot" },
     { id: 1, name: "Node(Express, Nest)" },
-    { id: 2, name: "Django" },
-    { id: 3, name: "GraphQL" },
-    { id: 4, name: "Strapi" },
   ];
 
   const database = [
@@ -57,7 +49,7 @@ const Home: NextPage = () => {
 
   const devops = [
     { id: 1, name: "Docker" },
-    { id: 2, name: "Gitlab / Travis CI" },
+    { id: 2, name: "Github Action / Gitlab" },
     { id: 3, name: "Kubernetes" },
     { id: 4, name: "AWS" },
   ];
@@ -278,9 +270,7 @@ const Home: NextPage = () => {
                 <p className="text-secondary-7/80 dark:text-primary-2/80">
                   A seasoned{" "}
                   <span className="text-secondary-1">software engineer</span>{" "}
-                  with over 4 years of experience, specialized in delivering and
-                  maintaining websites and full stack solutions of all levels of
-                  complexity, that drives the overall success of the product.
+                  with 4 years of experience, specialized in developing high-performance, secure, and maintainable server-side solutions, that drive the overall success of the product.
                 </p>
                 <Button
                   onClick={downloadCV}
@@ -363,36 +353,8 @@ const Home: NextPage = () => {
           </div>
         </section>
         <section className="skills pt-0 pb-16 bg-secondary-8 dark:bg-secondary-7">
-          <div className="container max-w-[1280px] px-6 grid sm:grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="flex flex-col gap-6">
-              <div className="">
-                <h6 className="font-bold text-secondary-7/90 dark:text-primary-2/90">
-                  Frontend
-                </h6>
-              </div>
-              <ul className="space-y-4 text-left">
-                {frontend.map((el) => (
-                  <li className="flex items-center space-x-3" key={el.id}>
-                    <svg
-                      className="flex-shrink-0 w-5 h-5 text-secondary-1"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clip-rule="evenodd"
-                      ></path>
-                    </svg>
-                    <span className="text-secondary-7/80 dark:text-primary-2/80">
-                      {el.name}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="flex flex-col gap-6">
+          <div className="container max-w-[1280px] px-9 grid sm:grid-cols-2 md:grid-cols-3 gap-9">
+            <div className="flex flex-col gap-9">
               <div className="">
                 <h6 className="font-bold text-secondary-7/90 dark:text-primary-2/90">
                   Backend
@@ -420,7 +382,7 @@ const Home: NextPage = () => {
                 ))}
               </ul>
             </div>
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-9">
               <div className="">
                 <h6 className="font-bold text-secondary-7/90 dark:text-primary-2/90">
                   Database
@@ -448,7 +410,7 @@ const Home: NextPage = () => {
                 ))}
               </ul>
             </div>
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-9">
               <div className="">
                 <h6 className="font-bold text-secondary-7/90 dark:text-primary-2/90">
                   DevOps
